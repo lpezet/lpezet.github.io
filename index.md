@@ -6,7 +6,8 @@ layout: default
 
 Software Engineer (actual one, by French standard) with a Master's Degree in Computer Science.
 Technology enthusiast with 20+ years of experience in developing software solutions in different industries like travel, education, and healthcare, in a startup environment.
-I code software on my (really small) spare time to scratch an itch, learn something new, investigate new architectures and solutions, give back to the open source community. 
+
+I code software on my (really small) spare time to scratch an itch, learn something new, investigate new architectures and solutions, and give back to the open source community. 
 
 
 # Projects
@@ -71,7 +72,7 @@ The goal of this tool is to help generate and integrate a simple dev diary. Work
 
 You can find more details at [mkay-diary](https://github.com/lpezet/mkay-diary).
 
-## aws-mfa
+## AWS MFA
 
 Simple bash script to help use MFA with AWS CLI.
 It leverages aws cli to store your new session information in your aws cli configuration. You can then reference your new profile in further aws cli commands.
@@ -173,4 +174,6 @@ You can find more details at [java](https://github.com/lpezet/java).
 
 ## More
 
-I 
+I worked on lots of projects, from SAS port to ECL, to Unreal Engine 4 shoot-them-up. I always strive to complete my projects, but there is only 24 hours in a day.
+
+You can find more at [lpezet](https://github.com/lpezet).
