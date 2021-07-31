@@ -12,7 +12,7 @@ I code software on my (really small) spare time to scratch an itch, learn someth
 
 # Projects
 
-## [![Typescript][ts-image]] ETL-JS / ETL-JS-CLI
+## <img src="./assets/images/typescript-programming-language.svg" alt="drawing" width="40"/> ETL-JS / ETL-JS-CLI
 
 Extract, Transform, and Load sharable and repeatable from command line.
 The idea came from trying to script ETL by leveraging existing tools (mysql, ssh, etc.).
