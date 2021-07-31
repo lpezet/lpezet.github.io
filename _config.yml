@@ -2,4 +2,5 @@ title: Luke Pezet
 description: Little bit of this...little bit of that...
 show_downloads: false
 google_analytics:
-theme: jekyll-theme-architect
+#theme: jekyll-theme-architect
+theme: jekyll-theme-modernist
