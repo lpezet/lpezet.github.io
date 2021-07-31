@@ -12,7 +12,7 @@ I code software on my (really small) spare time to scratch an itch, learn someth
 
 # Projects
 
-## ETL-JS / ETL-JS-CLI
+## [![Typescript][ts-image]] ETL-JS / ETL-JS-CLI
 
 Extract, Transform, and Load sharable and repeatable from command line.
 The idea came from trying to script ETL by leveraging existing tools (mysql, ssh, etc.).
@@ -177,3 +177,9 @@ You can find more details at [java](https://github.com/lpezet/java).
 I worked on lots of projects, from SAS port to ECL, to Unreal Engine 4 shoot-them-up. I always strive to complete my projects, but there is only 24 hours in a day.
 
 You can find more at [lpezet](https://github.com/lpezet).
+
+
+[ts-image]: ./assets/images/typescript-programming-language.svg
+[js-image]: ./assets/images/javascript-programming-language.svg
+[java-image]: ./assets/images/java-programming-language.svg
+[cmd-image]: ./assets/images/cmd-terminal.svg
