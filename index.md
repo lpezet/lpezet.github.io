@@ -12,7 +12,7 @@ I code software on my (really small) spare time to scratch an itch, learn someth
 
 # Projects
 
-## <img src="./assets/images/typescript-programming-language.svg" alt="drawing" width="40"/> ETL-JS / ETL-JS-CLI
+## <img src="./assets/images/typescript-programming-language.svg" alt="drawing" width="30"/> ETL-JS / ETL-JS-CLI
 
 Extract, Transform, and Load sharable and repeatable from command line.
 The idea came from trying to script ETL by leveraging existing tools (mysql, ssh, etc.).
@@ -58,7 +58,7 @@ Here's another concrete example [Processing and graphing out precipitation and s
 
 You can find more details at [etl-js](https://github.com/lpezet/etl-js) and [etl-js-cli](https://github.com/lpezet/etl-js-cli).
 
-## MKay Diary
+## <img src="./assets/images/typescript-programming-language.svg" alt="drawing" width="30"/> MKay Diary
 
 Simple NodeJS package providing command line interface to easily create and edit diary entries for development and more.
 
@@ -72,7 +72,7 @@ The goal of this tool is to help generate and integrate a simple dev diary. Work
 
 You can find more details at [mkay-diary](https://github.com/lpezet/mkay-diary).
 
-## AWS MFA
+## <img src="./assets/images/cmd-terminal.svg" alt="drawing" width="30"/> AWS MFA
 
 Simple bash script to help use MFA with AWS CLI.
 It leverages aws cli to store your new session information in your aws cli configuration. You can then reference your new profile in further aws cli commands.
@@ -84,7 +84,7 @@ aws --profile someprofile-mfa s3 cp ... # use your -mfa new temporary credential
 
 You can find more details at [aws-mfa](https://github.com/lpezet/aws-mfa).
 
-## King
+## <img src="./assets/images/javascript-programming-language.svg" alt="drawing" width="30"/> King
 
 Named after the Kong Inc. company, this is a little research project into rate-limiting, which Kong provides [here](https://docs.konghq.com/hub/kong-inc/rate-limiting/#enabling-the-plugin-on-a-service).
 
@@ -100,7 +100,7 @@ The goal was to implement simple rate limiting using some technology (redis) in 
 
 The can find more details at [king](https://github.com/lpezet/king).
 
-## Cue Me In (in progress)
+## <img src="./assets/images/typescript-programming-language.svg" alt="drawing" width="30"/> Cue Me In (in progress)
 
 This project is to simplify user notifications. An app is provided and users (developers) can leverage CueMeIn to detect changes and trigger notifications.
 The goal of this project was to first look into authentication/oauth integration with CLI programs (creating local server for callback), serverless functions (Google Functions or AWS Lambda), and managed user base (e.g. Firebase).
@@ -122,7 +122,7 @@ Curl.batch_download( oFiles );
 
 You can find more details at [ecl-bundle-lpezet](https://github.com/lpezet/ecl-bundle-lpezet).
 
-## Java
+## <img src="./assets/images/java-programming-language.svg" alt="drawing" width="30"/> Java
 
 A collection of classes and logic, like circuit breaker, I ended up reusing a lot at work and on other personal projects.
 
