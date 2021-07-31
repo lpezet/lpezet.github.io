@@ -122,7 +122,7 @@ Curl.batch_download( oFiles );
 
 You can find more details at [ecl-bundle-lpezet](https://github.com/lpezet/ecl-bundle-lpezet).
 
-## <img src="./assets/images/java-programming-language.svg" alt="Java" width="30"/> Java
+## <img src="./assets/images/java-programming-language.svg" alt="Java" width="30"/> Java Patterns, BufferedIterator, ...
 
 A collection of classes and logic, like circuit breaker, I ended up reusing a lot at work and on other personal projects.
 
