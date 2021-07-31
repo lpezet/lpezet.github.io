@@ -12,6 +12,15 @@ I code software on my (really small) spare time to scratch an itch, learn someth
 
 # Projects
 
+## United File Service (not open source)
+
+Simple and secure way to exchange files, small and big. Pay only for what you need.
+The idea was to develop a production-grade serverless service around simple file drop with notifications and third party payment processing.
+
+<img src="./assets/images/unitedfileservice.png" alt="Typescript" width="200"/>
+
+This service is available at [unitedfileservice.com](https://unitedfileservice.com/).
+
 ## <img src="./assets/images/typescript-programming-language.svg" alt="Typescript" width="30"/> ETL-JS / ETL-JS-CLI
 
 Extract, Transform, and Load sharable and repeatable from command line.
