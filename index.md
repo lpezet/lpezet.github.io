@@ -19,7 +19,7 @@ The idea was to develop a production-grade serverless service around simple file
 
 <img src="./assets/images/unitedfileservice.png" alt="Typescript" width="800"/>
 
-This service is available at [unitedfileservice.com](https://unitedfileservice.com/).
+This service is available at **[unitedfileservice.com](https://unitedfileservice.com/)**.
 
 ## <img src="./assets/images/typescript-programming-language.svg" alt="Typescript" width="32"/> ETL-JS / ETL-JS-CLI
 
@@ -65,7 +65,7 @@ load:
 ```
 Here's another concrete example [Processing and graphing out precipitation and snowfall for specific weather stations.](https://github.com/lpezet/etl-js-cli/blob/master/examples/prcp_snow_chart.yml).
 
-You can find more details at [etl-js](https://github.com/lpezet/etl-js) and [etl-js-cli](https://github.com/lpezet/etl-js-cli).
+You can find more details at **[etl-js](https://github.com/lpezet/etl-js) and [etl-js-cli](https://github.com/lpezet/etl-js-cli)**.
 
 ## <img src="./assets/images/typescript-programming-language.svg" alt="Typescript" width="32"/> MKay Diary
 
@@ -79,7 +79,7 @@ mkay-diary embed # to embed full diray in Readme.md
 
 The goal of this tool is to help generate and integrate a simple dev diary. Working on lots of small projects, I found it useful to keep a diary, with simple daily entries. For example, going back to those entries after long periods of coding idleness helps remember where things were left off. Other times, without being away too long, it helps reading through a train a thought written down.
 
-You can find more details at [mkay-diary](https://github.com/lpezet/mkay-diary).
+You can find more details at **[mkay-diary](https://github.com/lpezet/mkay-diary)**.
 
 ## <img src="./assets/images/cmd-terminal.svg" alt="Command" width="32"/> AWS MFA
 
@@ -91,7 +91,7 @@ aws-mfa someprofile 123456 # OTP from your device
 aws --profile someprofile-mfa s3 cp ... # use your -mfa new temporary credentials now
 ```
 
-You can find more details at [aws-mfa](https://github.com/lpezet/aws-mfa).
+You can find more details at **[aws-mfa](https://github.com/lpezet/aws-mfa)**.
 
 ## <img src="./assets/images/javascript-programming-language.svg" alt="Javascript" width="32"/> King
 
@@ -107,14 +107,14 @@ X-RateLimit-Remaining-day: 77
 
 The goal was to implement simple rate limiting using some technology (redis) in Javascript and figure out its cost model.
 
-The can find more details at [king](https://github.com/lpezet/king).
+You can find more details at **[king](https://github.com/lpezet/king)**.
 
 ## <img src="./assets/images/typescript-programming-language.svg" alt="Typescript" width="32"/> Cue Me In (in progress)
 
 This project is to simplify user notifications. An app is provided and users (developers) can leverage CueMeIn to detect changes and trigger notifications.
 The goal of this project was to first look into authentication/oauth integration with CLI programs (creating local server for callback), serverless functions (Google Functions or AWS Lambda), and managed user base (e.g. Firebase).
 
-You can find more details at [cue-me-in-cli](https://github.com/lpezet/cue-me-in-cli).
+You can find more details at **[cue-me-in-cli](https://github.com/lpezet/cue-me-in-cli)**.
 
 ## <img src="https://avatars.githubusercontent.com/u/900867?s=32&v=4" alt="HPCCSystems"/> HPCCSystems ECL Bundle
 
@@ -129,7 +129,7 @@ oFiles := DATASET([ {'ftp://ftp.fu-berlin.de/pub/misc/movies/database/actors.lis
 Curl.batch_download( oFiles );
 ```
 
-You can find more details at [ecl-bundle-lpezet](https://github.com/lpezet/ecl-bundle-lpezet).
+You can find more details at **[ecl-bundle-lpezet](https://github.com/lpezet/ecl-bundle-lpezet)**.
 
 ## <img src="./assets/images/java-programming-language.svg" alt="Java" width="32"/> Java Patterns, BufferedIterator, ...
 
@@ -179,13 +179,13 @@ public class SingleTryCircuitBreakerStrategyTest {
 }
 ```
 
-You can find more details at [java](https://github.com/lpezet/java).
+You can find more details at **[java](https://github.com/lpezet/java)**.
 
 ## More
 
 I worked on lots of projects, from SAS port to ECL, to Unreal Engine 4 shoot-them-up. I always strive to complete my projects, but there is only 24 hours in a day.
 
-You can find more at [lpezet](https://github.com/lpezet).
+You can find more at **[lpezet](https://github.com/lpezet)**.
 
 
 [ts-image]: ./assets/images/typescript-programming-language.svg
