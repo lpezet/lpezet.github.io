@@ -181,7 +181,7 @@ public class SingleTryCircuitBreakerStrategyTest {
 
 You can find more details at **[java](https://github.com/lpezet/java)**.
 
-## More
+## <img src="./assets/images/add-plus.svg" alt="ProjectIcon" width="32"/> More
 
 I worked on lots of projects, from SAS port to ECL, to Unreal Engine 4 shoot-them-up. I always strive to complete my projects, but there is only 24 hours in a day.
 
