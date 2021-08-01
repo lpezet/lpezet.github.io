@@ -12,16 +12,16 @@ I code software on my (really small) spare time to scratch an itch, learn someth
 
 # Projects
 
-## <img src="./assets/images/unitedfileservice_32x32.png" alt="Typescript" width="32"/> United File Service (not open source)
+## <img src="./assets/images/unitedfileservice_32x32.png" alt="ProjectIcon" width="32"/> United File Service (not open source)
 
 Simple and secure way to exchange files, small and big. Pay only for what you need.
 The idea was to develop a production-grade serverless service around simple file drop with notifications and third party payment processing.
 
-<img src="./assets/images/unitedfileservice.png" alt="Typescript" width="800"/>
+<img src="./assets/images/unitedfileservice.png" alt="ProjectSnapshot" width="800"/>
 
 This service is available at **[unitedfileservice.com](https://unitedfileservice.com/)**.
 
-## <img src="./assets/images/typescript-programming-language.svg" alt="Typescript" width="32"/> ETL-JS / ETL-JS-CLI
+## <img src="./assets/images/typescript-programming-language.svg" alt="ProjectIcon" width="32"/> ETL-JS / ETL-JS-CLI
 
 Extract, Transform, and Load sharable and repeatable from command line.
 The idea came from trying to script ETL by leveraging existing tools (mysql, ssh, etc.).
@@ -67,7 +67,7 @@ Here's another concrete example [Processing and graphing out precipitation and s
 
 You can find more details at **[etl-js](https://github.com/lpezet/etl-js) and [etl-js-cli](https://github.com/lpezet/etl-js-cli)**.
 
-## <img src="./assets/images/typescript-programming-language.svg" alt="Typescript" width="32"/> MKay Diary
+## <img src="./assets/images/typescript-programming-language.svg" alt="ProjectIcon" width="32"/> MKay Diary
 
 Simple NodeJS package providing command line interface to easily create and edit diary entries for development and more.
 
@@ -81,7 +81,7 @@ The goal of this tool is to help generate and integrate a simple dev diary. Work
 
 You can find more details at **[mkay-diary](https://github.com/lpezet/mkay-diary)**.
 
-## <img src="./assets/images/cmd-terminal.svg" alt="Command" width="32"/> AWS MFA
+## <img src="./assets/images/cmd-terminal.svg" alt="ProjectIcon" width="32"/> AWS MFA
 
 Simple bash script to help use MFA with AWS CLI.
 It leverages aws cli to store your new session information in your aws cli configuration. You can then reference your new profile in further aws cli commands.
@@ -93,7 +93,7 @@ aws --profile someprofile-mfa s3 cp ... # use your -mfa new temporary credential
 
 You can find more details at **[aws-mfa](https://github.com/lpezet/aws-mfa)**.
 
-## <img src="./assets/images/javascript-programming-language.svg" alt="Javascript" width="32"/> King
+## <img src="./assets/images/javascript-programming-language.svg" alt="ProjectIcon" width="32"/> King
 
 Named after the Kong Inc. company, this is a little research project into rate-limiting, which Kong provides [here](https://docs.konghq.com/hub/kong-inc/rate-limiting/#enabling-the-plugin-on-a-service).
 
@@ -109,14 +109,14 @@ The goal was to implement simple rate limiting using some technology (redis) in 
 
 You can find more details at **[king](https://github.com/lpezet/king)**.
 
-## <img src="./assets/images/typescript-programming-language.svg" alt="Typescript" width="32"/> Cue Me In (in progress)
+## <img src="./assets/images/typescript-programming-language.svg" alt="ProjectIcon" width="32"/> Cue Me In (in progress)
 
 This project is to simplify user notifications. An app is provided and users (developers) can leverage CueMeIn to detect changes and trigger notifications.
 The goal of this project was to first look into authentication/oauth integration with CLI programs (creating local server for callback), serverless functions (Google Functions or AWS Lambda), and managed user base (e.g. Firebase).
 
 You can find more details at **[cue-me-in-cli](https://github.com/lpezet/cue-me-in-cli)**.
 
-## <img src="https://avatars.githubusercontent.com/u/900867?s=32&v=4" alt="HPCCSystems"/> HPCCSystems ECL Bundle
+## <img src="https://avatars.githubusercontent.com/u/900867?s=32&v=4" alt="ProjectIcon"/> HPCCSystems ECL Bundle
 
 This project regroups some functionality I often use when working with data using HPCC Systems platform.
 
@@ -131,7 +131,7 @@ Curl.batch_download( oFiles );
 
 You can find more details at **[ecl-bundle-lpezet](https://github.com/lpezet/ecl-bundle-lpezet)**.
 
-## <img src="./assets/images/java-programming-language.svg" alt="Java" width="32"/> Java Patterns, BufferedIterator, ...
+## <img src="./assets/images/java-programming-language.svg" alt="ProjectIcon" width="32"/> Java Patterns, BufferedIterator, ...
 
 A collection of classes and logic, like circuit breaker, I ended up reusing a lot at work and on other personal projects.
 
