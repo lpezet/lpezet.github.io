@@ -4,8 +4,9 @@
 @import "{{ site.theme }}";
 
 img[alt~="ProjectIcon"] {
-    position: relative;
+    float: right;
     bottom: -8px;
     width: 32px;
     height: 32px;
+    padding-left: 3px;
 }
