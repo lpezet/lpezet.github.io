@@ -12,7 +12,7 @@ I code software on my (really small) spare time to scratch an itch, learn someth
 
 # Projects
 
-## <img src="./assets/images/unitedfileservice_32x32.png" alt="ProjectIcon" width="32"/> United File Service (not open source)
+## <img src="./assets/images/unitedfileservice_32x32.png" alt="ProjectIcon" width="32"/> <img src="./assets/images/typescript-programming-language.svg" alt="ProjectIcon" width="32"/> <img src="./assets/images/javascript-programming-language.svg" alt="ProjectIcon" width="32"/>  United File Service (not open source)
 
 Simple and secure way to exchange files, small and big. Pay only for what you need.
 The idea was to develop a production-grade serverless service around simple file drop with notifications and third party payment processing.
@@ -21,7 +21,7 @@ The idea was to develop a production-grade serverless service around simple file
 
 This service is available at **[unitedfileservice.com](https://unitedfileservice.com/)**.
 
-## <img src="./assets/images/typescript-programming-language.svg" alt="ProjectIcon" width="32"/> ETL-JS / ETL-JS-CLI
+## <img src="./assets/images/typescript-programming-language.svg" alt="ProjectIcon" width="32"/> <img src="./assets/images/javascript-programming-language.svg" alt="ProjectIcon" width="32"/> <img src="./assets/images/cmd-terminal.svg" alt="ProjectIcon" width="32"/> ETL-JS / ETL-JS-CLI
 
 Extract, Transform, and Load sharable and repeatable from command line.
 The idea came from trying to script ETL by leveraging existing tools (mysql, ssh, etc.).
@@ -67,7 +67,7 @@ Here's another concrete example [Processing and graphing out precipitation and s
 
 You can find more details at **[etl-js](https://github.com/lpezet/etl-js) and [etl-js-cli](https://github.com/lpezet/etl-js-cli)**.
 
-## <img src="./assets/images/typescript-programming-language.svg" alt="ProjectIcon" width="32"/> MKay Diary
+## <img src="./assets/images/typescript-programming-language.svg" alt="ProjectIcon" width="32"/> <img src="./assets/images/javascript-programming-language.svg" alt="ProjectIcon" width="32"/> <img src="./assets/images/cmd-terminal.svg" alt="ProjectIcon" width="32"/> MKay Diary
 
 Simple NodeJS package providing command line interface to easily create and edit diary entries for development and more.
 
