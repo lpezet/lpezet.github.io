@@ -4,7 +4,7 @@ layout: default
 
 # About Me
 
-Software Engineer (actual one, by French standard) with a Master's Degree in Computer Science.
+Software Engineer (_Diplôme d'Ingénieur_ from France) with a Master's Degree in Computer Science.
 Technology enthusiast with 20+ years of experience in developing software solutions in different industries like travel, education, and healthcare, in a startup environment.
 
 I code software on my (really small) spare time to scratch an itch, learn something new, investigate new architectures and solutions, and give back to the open source community. 
