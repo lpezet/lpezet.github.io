@@ -1,0 +1,112 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">Software engineer &middot; <em>Dipl&ocirc;me d'Ing&eacute;nieur</em>, MSc Computer Science</p>
+      <h1>{{ site.title }}</h1>
+      <p class="lede">
+        Twenty-odd years building software in startups — travel, education, healthcare.
+        The rest of the time I write code on a very small amount of spare time, to scratch
+        an itch, learn something new, poke at an architecture I don't trust yet, and give
+        something back.
+      </p>
+      <p class="lede">
+        Right now that mostly means <strong>autonomous coding agents</strong>, and the
+        uncomfortable question underneath them: an agent capable enough to leave running
+        unattended is also capable enough to do real damage with whatever credentials you
+        hand it. So don't hand it any.
+      </p>
+    </div>
+
+    <aside class="hero-side" aria-label="At a glance">
+      <ul class="hero-facts">
+        <li><span class="k">Now</span><span class="v">Agent sandboxing, credential brokers, agent identity</span></li>
+        <li><span class="k">Reach for</span><span class="v">TypeScript, Node, Docker, Python, Java, Go</span></li>
+        <li><span class="k">Runs on</span><span class="v">AWS, Cloudflare Workers, serverless-by-default</span></li>
+        <li><span class="k">Also</span><span class="v">Embedded C++, Unreal Engine, big data on HPCC Systems</span></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+{% for group in site.data.projects.groups %}
+<section class="group" id="{{ group.id }}">
+  <div class="wrap">
+    <header class="group-header">
+      <h2>{{ group.title }}</h2>
+      {% if group.period %}<p class="group-period">{{ group.period }}</p>{% endif %}
+      {% if group.blurb %}<p class="group-blurb">{{ group.blurb }}</p>{% endif %}
+    </header>
+
+    <div class="cards">
+      {% for p in group.projects %}
+      <article class="card{% if p.private %} card-private{% endif %}">
+        <header class="card-header">
+          <h3>{{ p.name }}</h3>
+          <div class="badges">
+            {% if p.private %}<span class="badge badge-private">private</span>{% endif %}
+            {% if p.status %}<span class="badge badge-{{ p.status | slugify }}">{{ p.status }}</span>{% endif %}
+          </div>
+        </header>
+
+        {% if p.tagline %}<p class="card-tagline">{{ p.tagline }}</p>{% endif %}
+
+        {% if p.image %}
+        <img class="card-image" src="{{ p.image | relative_url }}" alt="Screenshot of {{ p.name }}" loading="lazy" width="800">
+        {% endif %}
+
+        {% if p.goal %}
+        <div class="field">
+          <span class="field-label">Goal</span>
+          <p>{{ p.goal }}</p>
+        </div>
+        {% endif %}
+
+        {% if p.challenge %}
+        <div class="field field-challenge">
+          <span class="field-label">The hard part</span>
+          <p>{{ p.challenge }}</p>
+        </div>
+        {% endif %}
+
+        <footer class="card-footer">
+          {% if p.tech %}
+          <ul class="tech">
+            {% for t in p.tech %}<li>{{ t }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+
+          {% if p.private %}
+            <p class="private-note">Private project — no link, but happy to talk about it.</p>
+          {% elsif p.links %}
+          <ul class="links">
+            {% for l in p.links %}
+            <li><a href="{{ l.url }}">{{ l.label }}<span class="arrow" aria-hidden="true">&#8599;</span></a></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </footer>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+<section class="group group-more">
+  <div class="wrap">
+    <h2>And a long tail of the rest</h2>
+    <p>
+      A SAS port to ECL, an Unreal Engine shoot-em-up, rate limiters, circular buffers,
+      a study of how differently languages report test coverage, blockchain experiments,
+      a Starlink monitor. I try hard to finish what I start, but there are still only
+      twenty-four hours in a day.
+    </p>
+    <p>
+      <a class="button" href="https://github.com/{{ site.author.github }}">Everything on GitHub<span class="arrow" aria-hidden="true">&#8599;</span></a>
+    </p>
+  </div>
+</section>

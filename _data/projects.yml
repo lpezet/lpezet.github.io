@@ -1,0 +1,305 @@
+# Projects shown on the home page.
+#
+# Each entry:
+#   name      required
+#   tagline   one line, shown under the name
+#   goal      what I was trying to do / why it exists
+#   challenge the interesting hard part (optional, but it's the best field here)
+#   tech      list of short tags
+#   links     list of { label, url } — omit entirely for private work
+#   private   true renders the "private" badge and suppresses links
+#   status    optional short badge: "live", "in progress", "archived"
+
+groups:
+  - id: agents
+    title: Agents, and the rails they run on
+    period: 2025 – now
+    blurb: >-
+      Coding agents got good enough to leave running. That turns out to be a
+      security problem long before it's a capability problem, and most of my
+      spare time now goes into that gap.
+    projects:
+      - name: Secure Agent Lab
+        tagline: Run an autonomous agent without ever handing it a credential.
+        goal: >-
+          A Docker stack where the agent container holds no API keys, no .env,
+          no tokens. Outbound HTTPS is intercepted by mitmproxy, which injects
+          credentials fetched from a broker sitting on a network the agent
+          cannot reach. Two networks, one door.
+        challenge: >-
+          The stack versions its security boundary by tag — but a deployment
+          keeps its own bind-mounted copies of the proxy and broker files, so
+          they don't move when the tag does. A lab can repin to a release
+          containing a security fix and go right on running the vulnerable
+          file. That gap is the entire reason the CLI exists: whatever
+          installed those files has to be what updates them.
+        tech: [Docker, mitmproxy, Go, Node.js, nginx]
+        links:
+          - label: secure-agent-lab
+            url: https://github.com/lpezet/secure-agent-lab
+          - label: sal (CLI)
+            url: https://github.com/lpezet/secure-agent-lab-cli
+
+      - name: AgentLink
+        tagline: A platform for agents that need an identity before anyone trusts them.
+        goal: >-
+          Give agents a place to be registered, described and discovered — and
+          a plugin surface that works across runtimes rather than one vendor's.
+          The plugin collection is public and runs on both Claude Code and
+          Hermes Agent; it covers Ed25519 agent identity, JWT issuance and
+          reputation via Botcha.ai, plus a few less serious ones.
+        challenge: >-
+          "Which agent is this, and who is accountable for it?" has no good
+          answer yet. Binding an agent identity back to a human operator, in a
+          way a third-party service can verify without trusting me, is the part
+          that keeps being harder than the code around it.
+        tech: [TypeScript, Cloudflare Workers, D1, React, Nx, MCP]
+        status: live
+        links:
+          - label: agentlink.io
+            url: https://agentlink.io
+          - label: agentlink-plugins
+            url: https://github.com/lpezet/agentlink-plugins
+
+      - name: Seller Agent Lab
+        tagline: An agent earning real money, inside rails it doesn't control.
+        private: true
+        goal: >-
+          A hardened scaffold for running an autonomous seller agent on crypto
+          agent marketplaces — picking up bounties, running paid services,
+          settling in USDC. The agent gets a wallet's worth of capability
+          without ever getting the wallet.
+        challenge: >-
+          Marketplace task descriptions are attacker-controlled input flowing
+          straight into the agent's context. If the signing key lived in the
+          worker, one successful prompt injection is one irreversible drain. So
+          the key sits behind a broker with hard per-transaction and daily
+          caps, a destination allowlist, and templated signing only — never
+          "sign these arbitrary bytes", which is exactly how permits drain
+          wallets. Anything above a threshold has to get a yes from a human
+          over Telegram, and the watchdog that can pull the plug is
+          deliberately not an LLM, so it can't be talked out of it.
+        tech: [Docker, Python, mitmproxy, x402, EIP-191]
+
+      - name: ToDo Blueprints
+        tagline: A vocabulary a human and a coding agent can both edit.
+        private: true
+        goal: >-
+          A structured spec layer sitting above the code, which a
+          product-minded human authors and evolves through a UI without ever
+          opening a source file — and which the agent then implements however
+          it wants. Loosely inspired by Unreal's Blueprints, minus two things
+          on purpose: no node-and-wire canvas (positions cost maintenance and
+          add no meaning), and no runtime to debug against.
+        challenge: >-
+          Getting the spec to stay authoritative. The moment the code and the
+          glossary disagree, the whole idea collapses back into documentation
+          nobody reads. Design-time only means the tests have to carry the
+          entire observability burden, and the boring edge cases — completing
+          an already-completed task, deleting a project with things still in it
+          — are where the vocabulary either holds up or doesn't.
+        tech: [TypeScript, React, Vite, Express]
+        status: in progress
+
+      - name: One agent per game
+        tagline: Game projects, each with its own sandboxed pair programmer.
+        private: true
+        goal: >-
+          A shared secure container stack where every game project gets a
+          paired agent workspace with its own standing instructions, its own
+          state, and a mount of just that game's source. Started as an excuse
+          to build a shoot-em-up; became a decent test of whether the
+          credential isolation actually survives daily use.
+        challenge: >-
+          Making the secure path the convenient one. Security that adds a step
+          to every session gets skipped by Friday, so the whole thing collapses
+          to one command that takes a project path and infers the rest.
+        tech: [Docker, TypeScript, Claude Code]
+
+  - id: shipped
+    title: Out in the world
+    projects:
+      - name: United File Service
+        tagline: Simple, secure file exchange — small files and big ones.
+        goal: >-
+          Take file drop with notifications and third-party payment processing
+          all the way to a production-grade serverless service, not a demo. Pay
+          only for what you need.
+        challenge: >-
+          Serverless is cheap until someone uploads 40GB. Most of the work was
+          in the parts that aren't the feature: upload resumption, cost
+          modeling, and the payment path.
+        tech: [TypeScript, JavaScript, AWS, Serverless]
+        status: live
+        image: /assets/images/unitedfileservice.png
+        links:
+          - label: unitedfileservice.com
+            url: https://unitedfileservice.com/
+
+  - id: tools
+    title: Tools and libraries
+    blurb: >-
+      Mostly things I wanted to exist while working on something else.
+    projects:
+      - name: ETL-JS
+        tagline: Sharable, repeatable ETL from the command line.
+        goal: >-
+          Script ETL by leaning on the tools already installed — mysql, ssh,
+          curl — instead of replacing them. A YAML file describes the steps;
+          the CLI runs them anywhere.
+        tech: [TypeScript, JavaScript, CLI]
+        links:
+          - label: etl-js
+            url: https://github.com/lpezet/etl-js
+          - label: etl-js-cli
+            url: https://github.com/lpezet/etl-js-cli
+
+      - name: MKay Diary
+        tagline: A dev diary that lives next to the code.
+        goal: >-
+          Working on lots of small projects, a daily entry turned out to be the
+          cheapest way back in. Coming back after a long idle stretch, the
+          diary is what tells you where you left off — and sometimes it's just
+          nice to read a train of thought back.
+        tech: [TypeScript, Node.js, CLI]
+        links:
+          - label: mkay-diary
+            url: https://github.com/lpezet/mkay-diary
+
+      - name: Cue Me In
+        tagline: Watch a thing, get told when it changes.
+        goal: >-
+          A library and CLI for monitoring processes and web pages, and an
+          excuse to work through OAuth from a CLI program — spinning up a local
+          callback server — plus serverless functions and a managed user base.
+        tech: [TypeScript, Firebase, Serverless]
+        links:
+          - label: cue-me-in
+            url: https://github.com/lpezet/cue-me-in
+          - label: cue-me-in-cli
+            url: https://github.com/lpezet/cue-me-in-cli
+
+      - name: Oura Ring API Client
+        tagline: A typed client for the Oura v2 API.
+        goal: >-
+          A restructuring of an existing community client into something fully
+          typed and published, so my own sleep data was one import away.
+        tech: [TypeScript, npm]
+        links:
+          - label: oura-ring-api-client
+            url: https://github.com/lpezet/oura-ring-api-client
+
+      - name: HPCC Cluster
+        tagline: Create and manage HPCC Systems clusters from JavaScript.
+        goal: >-
+          Cluster management for the HPCC Systems platform as a library and a
+          CLI, with config sets, so standing one up stopped being a manual
+          afternoon.
+        tech: [JavaScript, CLI, HPCC Systems]
+        links:
+          - label: hpcc-cluster
+            url: https://github.com/lpezet/hpcc-cluster
+          - label: hpcc-cluster-cli
+            url: https://github.com/lpezet/hpcc-cluster-cli
+
+      - name: King
+        tagline: Rate limiting, and what it actually costs.
+        goal: >-
+          Named after Kong, this was a research project into implementing rate
+          limiting on Redis and then working out its real cost model — the
+          headers are easy, the accounting isn't.
+        tech: [JavaScript, Redis]
+        links:
+          - label: king
+            url: https://github.com/lpezet/king
+
+      - name: AWS MFA
+        tagline: One command between you and an MFA-gated AWS CLI.
+        goal: >-
+          A small bash script that trades an OTP for temporary credentials and
+          writes them back into your AWS config as a new profile, so every
+          following command just works.
+        tech: [Bash, AWS]
+        links:
+          - label: aws-mfa
+            url: https://github.com/lpezet/aws-mfa
+
+  - id: earlier
+    title: Earlier work worth keeping
+    blurb: >-
+      Older, but these are the ones I still point people at.
+    projects:
+      - name: UE4 Dialogue System
+        tagline: Branching dialogue for Unreal Engine 4.
+        goal: >-
+          A dialogue system built while making a side-scroller, and the most
+          starred thing I've put on GitHub — which says something about where
+          the demand was.
+        tech: [C++, Unreal Engine 4]
+        links:
+          - label: UE4DialogueSystem
+            url: https://github.com/lpezet/UE4DialogueSystem
+
+      - name: HPCC Systems / ECL
+        tagline: Bundles, benchmarks, and a bridge for SAS users.
+        goal: >-
+          Years of data work on HPCC Systems, packaged up: a bundle of the
+          operations I kept rewriting, big-data benchmarks ported to the
+          platform, and SASsy — a helper for SAS users trying to get their
+          bearings in ECL.
+        tech: [ECL, HPCC Systems]
+        links:
+          - label: ecl-bundle-lpezet
+            url: https://github.com/lpezet/ecl-bundle-lpezet
+          - label: SASsy
+            url: https://github.com/lpezet/SASsy
+          - label: hpcc_benchmarks
+            url: https://github.com/lpezet/hpcc_benchmarks
+
+      - name: Java patterns
+        tagline: Circuit breakers, buffered iterators, and other repeat offenders.
+        goal: >-
+          The classes I kept re-implementing at work and on personal projects,
+          collected in one place with tests — circuit breaker strategies being
+          the ones that earned their keep.
+        tech: [Java]
+        links:
+          - label: java
+            url: https://github.com/lpezet/java
+
+      - name: dbt Profiler
+        tagline: Data profiling as a dbt package.
+        goal: >-
+          Column-level profiling that runs where the data already is, instead
+          of pulling it somewhere else to look at it.
+        tech: [dbt, SQL]
+        links:
+          - label: dbt-profiler
+            url: https://github.com/lpezet/dbt-profiler
+
+  - id: sidequests
+    title: Side quests
+    blurb: >-
+      Not everything is infrastructure.
+    projects:
+      - name: Pressor
+        tagline: A pressure sensor on a Seeed XIAO nRF52840.
+        private: true
+        goal: >-
+          Embedded firmware on a BLE microcontroller, mostly to remember what
+          it's like to work somewhere with no garbage collector and a hard
+          memory ceiling.
+        tech: [C++, PlatformIO, nRF52840]
+
+      - name: Scribe
+        tagline: Separating what happens in a story from how it's told.
+        private: true
+        goal: >-
+          A story-generation approach that splits an immutable axiom layer —
+          events, setting, cause and effect — from a style layer that can be
+          swapped freely. Same chain of events, delivered as noir or as gothic.
+        challenge: >-
+          Keeping the two layers genuinely independent. Models want to let
+          style leak into the facts, and once the voice starts changing what
+          happened, there's nothing left to swap.
+        tech: [LLMs, Prompt design]

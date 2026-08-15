@@ -1,6 +1,22 @@
 title: Luke Pezet
-description: Little bit of this...little bit of that...
-show_downloads: false
-google_analytics:
-#theme: jekyll-theme-architect
-theme: jekyll-theme-modernist
+tagline: Software engineer. I build things to find out how they break.
+description: >-
+  Software engineer with 20+ years across travel, education and healthcare.
+  Currently spending nights and weekends on autonomous coding agents and the
+  guardrails they need.
+url: https://lpezet.github.io
+lang: en
+
+author:
+  name: Luke Pezet
+  email: lpezet@gmail.com
+  github: lpezet
+  linkedin: lpezet
+
+# No remote theme — the layout and stylesheet live in this repo.
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
