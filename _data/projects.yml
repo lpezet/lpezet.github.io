@@ -82,23 +82,26 @@ groups:
           deliberately not an LLM, so it can't be talked out of it.
         tech: [Docker, Python, mitmproxy, x402, EIP-191]
 
-      - name: ToDo Blueprints
+      - name: Spec Tool
         tagline: A vocabulary a human and a coding agent can both edit.
         private: true
         goal: >-
-          A structured spec layer sitting above the code, which a
-          product-minded human authors and evolves through a UI without ever
-          opening a source file — and which the agent then implements however
-          it wants. Loosely inspired by Unreal's Blueprints, minus two things
-          on purpose: no node-and-wire canvas (positions cost maintenance and
-          add no meaning), and no runtime to debug against.
+          A structured spec layer that sits above the code: a product-minded
+          human authors and evolves it through a UI without ever opening a
+          source file, and the agent implements it however it likes. Loosely
+          inspired by Unreal's Blueprints, minus two things on purpose — no
+          node-and-wire canvas (positions cost maintenance without adding
+          meaning) and no runtime to debug against. The ToDo app running
+          through it is the thread, not the destination: a domain boring enough
+          not to distract, picked precisely because nobody would mistake it for
+          the point.
         challenge: >-
           Getting the spec to stay authoritative. The moment the code and the
           glossary disagree, the whole idea collapses back into documentation
-          nobody reads. Design-time only means the tests have to carry the
-          entire observability burden, and the boring edge cases — completing
-          an already-completed task, deleting a project with things still in it
-          — are where the vocabulary either holds up or doesn't.
+          nobody reads. Design-time only means the tests carry the entire
+          observability burden, and it's the dull cases — completing an
+          already-completed task, deleting a project with tasks still inside —
+          where the vocabulary either holds up or doesn't.
         tech: [TypeScript, React, Vite, Express]
         status: in progress
 
