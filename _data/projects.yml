@@ -14,11 +14,12 @@ groups:
   - id: agents
     title: Agents, and the rails they run on
     nav: Agents
-    period: 2025 – now
+    period: 2024 – now
     blurb: >-
-      Coding agents got good enough to leave running. That turns out to be a
-      security problem long before it's a capability problem, and most of my
-      spare time now goes into that gap.
+      It started with a sommelier in a chat window. Then coding agents got good
+      enough to leave running, which turns out to be a security problem long
+      before it's a capability problem — and that is where most of the spare
+      time goes now.
     projects:
       - name: Secure Agent Lab
         tagline: Run an autonomous agent without ever handing it a credential.
@@ -119,6 +120,27 @@ groups:
           to every session gets skipped by Friday, so the whole thing collapses
           to one command that takes a project path and infers the rest.
         tech: [Docker, TypeScript, Claude Code]
+
+      - name: VinCent
+        tagline: A personal sommelier that lives in a chat window.
+        private: true
+        goal: >-
+          A wine companion, and where the interest in agents started. A chat
+          hub over websockets, a conversational agent with function-calling
+          tools for the cellar — add a bottle, list what's in there, drop one —
+          and a second agent that never speaks to you at all: it reads back
+          over the history and maintains your profile, what you liked, what you
+          didn't, which pairings actually worked.
+        challenge: >-
+          Splitting the agent in two. The one you talk to has to stay quick and
+          in character, while noticing that you keep coming back to the same
+          grape is a slower, more reflective job — and asking one prompt to do
+          both makes it worse at each. So taste lives behind its own agent with
+          its own tools, writing to a profile the conversational one reads. The
+          chat transport is deliberately generic: the agents join the same
+          socket hub a human client does, as bots, so the front end can change
+          without the agents noticing.
+        tech: [TypeScript, NestJS, OpenAI, socket.io, SQLite, Terraform]
 
   - id: shipped
     title: Out in the world
