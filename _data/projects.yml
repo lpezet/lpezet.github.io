@@ -82,7 +82,7 @@ groups:
           deliberately not an LLM, so it can't be talked out of it.
         tech: [Docker, Python, mitmproxy, x402, EIP-191]
 
-      - name: Spec Tool
+      - name: Spec DSL
         tagline: A vocabulary a human and a coding agent can both edit.
         private: true
         goal: >-
