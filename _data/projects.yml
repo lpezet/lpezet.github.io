@@ -13,6 +13,7 @@
 groups:
   - id: agents
     title: Agents, and the rails they run on
+    nav: Agents
     period: 2025 – now
     blurb: >-
       Coding agents got good enough to leave running. That turns out to be a
@@ -118,6 +119,7 @@ groups:
 
   - id: shipped
     title: Out in the world
+    nav: Shipped
     projects:
       - name: United File Service
         tagline: Simple, secure file exchange — small files and big ones.
@@ -138,6 +140,7 @@ groups:
 
   - id: tools
     title: Tools and libraries
+    nav: Tools
     blurb: >-
       Mostly things I wanted to exist while working on something else.
     projects:
@@ -153,6 +156,27 @@ groups:
             url: https://github.com/lpezet/etl-js
           - label: etl-js-cli
             url: https://github.com/lpezet/etl-js-cli
+
+      - name: dbt Profiler
+        tagline: Profile a schema without moving the data anywhere.
+        goal: >-
+          A dbt project that profiles a table or a whole schema in place —
+          nulls, cardinality, modes, and the character patterns a column
+          actually contains — by generating the SQL and letting the warehouse
+          do the work. Point it at a schema and it profiles everything in it;
+          narrow it to one table, a column list, or a smaller pattern budget
+          when the defaults get expensive.
+        challenge: >-
+          Profiling is cheap right up until a column is free text. Patterns and
+          modes over long strings are what turn a quick query into a full scan,
+          so most of the knobs — character length, pattern count, mode count —
+          exist to keep it affordable on real tables rather than on the demo
+          dataset. Results append incrementally by default, so successive runs
+          show a schema drifting instead of just describing it today.
+        tech: [dbt, SQL, Python, MySQL]
+        links:
+          - label: dbt-profiler
+            url: https://github.com/lpezet/dbt-profiler
 
       - name: MKay Diary
         tagline: A dev diary that lives next to the code.
@@ -178,16 +202,6 @@ groups:
             url: https://github.com/lpezet/cue-me-in
           - label: cue-me-in-cli
             url: https://github.com/lpezet/cue-me-in-cli
-
-      - name: Oura Ring API Client
-        tagline: A typed client for the Oura v2 API.
-        goal: >-
-          A restructuring of an existing community client into something fully
-          typed and published, so my own sleep data was one import away.
-        tech: [TypeScript, npm]
-        links:
-          - label: oura-ring-api-client
-            url: https://github.com/lpezet/oura-ring-api-client
 
       - name: HPCC Cluster
         tagline: Create and manage HPCC Systems clusters from JavaScript.
@@ -224,8 +238,58 @@ groups:
           - label: aws-mfa
             url: https://github.com/lpezet/aws-mfa
 
+  - id: practice
+    title: Testing, and other people's code
+    nav: Testing
+    blurb: >-
+      Two smaller repos that say more about how I work than about what I've
+      shipped.
+    projects:
+      - name: Test Coverage, Compared
+        tagline: The same class, the same useless test, three languages.
+        goal: >-
+          A three-method class written as identically as possible in Python,
+          TypeScript and Java, paired with a test that deliberately asserts
+          nothing and calls nothing. Every coverage tool should report zero.
+          That's the whole experiment.
+        challenge: >-
+          Only Java gave the honest answer — JaCoCo reported 0%. NYC reported
+          0% at the function level, but 25% at the statement level, counting
+          the function signatures themselves as misses. Coverage.py reported
+          <strong>57%</strong> for code where not one method was ever called.
+          A coverage number is a claim about your tests, and it's worth knowing
+          which tools will make that claim on no evidence at all — and how much
+          configuration it takes to stop them.
+        tech: [Python, TypeScript, Java, coverage.py, NYC, JaCoCo]
+        links:
+          - label: test-coverage
+            url: https://github.com/lpezet/test-coverage
+
+      - name: Comment Test Coverage
+        tagline: A GitHub Action I forked, and then kept.
+        goal: >-
+          Upstream posts a coverage summary as a PR comment. I needed it to
+          work in a monorepo, so I added an <code>id</code> input letting
+          several projects each own a comment on the same PR — and then kept
+          going: an <code>issue_number</code> input so it runs outside
+          <code>pull_request</code> events, Node 20, regex with named capturing
+          groups, and editing the existing comment in place instead of deleting
+          and re-posting it on every push.
+        challenge: >-
+          Thirty-four commits and three releases ahead of upstream, none
+          behind. Forking is the cheap part; the bill arrives later, when what
+          you changed includes a bundled <code>dist/</code> you now own and
+          every upstream fix has to come across by hand. Worth it here, because
+          the alternative was writing an Action from scratch to solve a problem
+          somebody had already solved nine tenths of.
+        tech: [JavaScript, GitHub Actions, Node.js]
+        links:
+          - label: comment-test-coverage
+            url: https://github.com/lpezet/comment-test-coverage
+
   - id: earlier
     title: Earlier work worth keeping
+    nav: Earlier work
     blurb: >-
       Older, but these are the ones I still point people at.
     projects:
@@ -267,18 +331,9 @@ groups:
           - label: java
             url: https://github.com/lpezet/java
 
-      - name: dbt Profiler
-        tagline: Data profiling as a dbt package.
-        goal: >-
-          Column-level profiling that runs where the data already is, instead
-          of pulling it somewhere else to look at it.
-        tech: [dbt, SQL]
-        links:
-          - label: dbt-profiler
-            url: https://github.com/lpezet/dbt-profiler
-
   - id: sidequests
     title: Side quests
+    nav: Side quests
     blurb: >-
       Not everything is infrastructure.
     projects:
