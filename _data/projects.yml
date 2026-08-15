@@ -106,7 +106,7 @@ groups:
         tech: [TypeScript, React, Vite, Express]
         status: in progress
 
-      - name: One agent per game
+      - name: Game Agent Lab
         tagline: Game projects, each with its own sandboxed pair programmer.
         private: true
         goal: >-
