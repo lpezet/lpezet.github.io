@@ -316,8 +316,31 @@ groups:
     title: Earlier work worth keeping
     nav: Earlier work
     blurb: >-
-      Older, but these are the ones I still point people at.
+      Older, and still the ones that come up.
     projects:
+      - name: ARTS Core
+        tagline: The retail industry's own data model, actually implemented.
+        private: true
+        goal: >-
+          An implementation of the operational data model from the Association
+          for Retail Technology Standards, built as a Quarkus service with
+          GraalVM native builds and Flyway migrations. Party and person up
+          through customer, membership account and account type; business unit,
+          store, workstation, till, operator and session; and the retail
+          transaction that ties all of it together.
+        challenge: >-
+          The reason to implement somebody else's model instead of inventing
+          one is that the standard is a catalogue of things that look like a
+          single field until you learn why they aren't. A manufacturer's coupon
+          is tendered <em>after</em> tax; a store coupon is a promotion applied
+          <em>before</em> it. Selling a voucher means holding money that isn't
+          yours yet, so the expiry date is a liability control rather than a UX
+          decision. Inventory isn't a count, it's a lifecycle — including a
+          state for stock that has quietly gone missing since the last cycle
+          count. Most of the work was reading, and most of the value was the
+          edge cases I'd otherwise have met in production.
+        tech: [Java, Quarkus, GraalVM, Flyway, AWS Lambda, SQL]
+
       - name: UE4 Dialogue System
         tagline: Branching dialogue for Unreal Engine 4.
         goal: >-

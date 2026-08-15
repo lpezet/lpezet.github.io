@@ -34,9 +34,9 @@ the group titles.
 For private work, set `private: true` and **omit `links` entirely** — the card
 renders a "private project" badge and a no-link note instead.
 
-`goal` and `challenge` are rendered as HTML, not escaped, so `<code>` and
-`<strong>` work inline. Keep it to those two — anything more belongs in the
-layout.
+`goal` and `challenge` are rendered as HTML, not escaped, so `<code>`,
+`<strong>` and `<em>` work inline. Keep it to those three — anything more
+belongs in the layout.
 
 ## Adding a group
 
