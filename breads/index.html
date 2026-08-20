@@ -1,0 +1,756 @@
+---
+permalink: /breads/
+title: Ancient Breads
+description: >-
+  Sixteen breads from 14,400 years ago to the ones still baked this morning —
+  each one as the archaeological or textual evidence has it, and again as a
+  formula you can actually bake.
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ancient Breads — a baker's collection · {{ site.title }}</title>
+<meta name="description" content="{{ page.description | strip_newlines | strip }}">
+<meta name="author" content="{{ site.author.name }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127838;</text></svg>">
+<script>
+  // Same theme choice as the rest of the site, set before first paint.
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+<style>
+  :root{
+    --ink:#241f1a; --ink-soft:#5c5148; --rule:#ddd2c4; --rule-soft:#ebe3d7;
+    --paper:#faf7f1; --card:#fffdf9;
+    --hist:#7a5c2e; --hist-bg:#f6efe0;
+    --now:#2f5d4f;  --now-bg:#e9f2ed;
+    --warn:#8a3d2a; --warn-bg:#f8eae5;
+    --accent:#a8571f;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#ece5da; --ink-soft:#a89c8d; --rule:#3d372f; --rule-soft:#302b25;
+      --paper:#191714; --card:#211e1a;
+      --hist:#d8b878; --hist-bg:#2a2418;
+      --now:#8fc9b2;  --now-bg:#18261f;
+      --warn:#e8a58e; --warn-bg:#2c1c16;
+      --accent:#e0955a;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#ece5da; --ink-soft:#a89c8d; --rule:#3d372f; --rule-soft:#302b25;
+    --paper:#191714; --card:#211e1a;
+    --hist:#d8b878; --hist-bg:#2a2418;
+    --now:#8fc9b2;  --now-bg:#18261f;
+    --warn:#e8a58e; --warn-bg:#2c1c16;
+    --accent:#e0955a;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font:16px/1.65 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:48px 24px 90px}
+  h1{font-size:2.1rem;line-height:1.15;margin:0 0 6px;letter-spacing:-.02em}
+  .sub{color:var(--ink-soft);font-size:1.02rem;margin:0 0 6px}
+  .meta{color:var(--ink-soft);font-size:.82rem;font-family:ui-sans-serif,system-ui,sans-serif;
+        text-transform:uppercase;letter-spacing:.09em;margin:0 0 34px}
+  h2{font-size:1.28rem;margin:52px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--rule);letter-spacing:-.01em}
+  h3{font-size:1.05rem;margin:26px 0 8px}
+  p{margin:0 0 14px}
+  a{color:var(--accent)}
+  small{color:var(--ink-soft)}
+
+  .lede{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:20px 22px;margin:0 0 12px}
+  .lede p:last-child{margin-bottom:0}
+
+  table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:.9rem;
+        font-family:ui-sans-serif,system-ui,sans-serif}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+  th{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-soft);
+     border-bottom:1.5px solid var(--rule);font-weight:600}
+  tbody tr:last-child td{border-bottom:none}
+
+  .recipe{background:var(--card);border:1px solid var(--rule);border-radius:12px;
+          padding:24px 26px;margin:0 0 26px}
+  .rhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:2px}
+  .rhead h3{margin:0;font-size:1.22rem}
+  .date{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.74rem;font-weight:600;
+        letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);
+        border:1px solid var(--rule);border-radius:99px;padding:2px 10px;white-space:nowrap}
+  .prov{color:var(--ink-soft);font-size:.9rem;font-style:italic;margin:0 0 16px}
+
+  .block{border-left:3px solid var(--rule);padding:2px 0 2px 16px;margin:18px 0}
+  .block.h{border-left-color:var(--hist)}
+  .block.n{border-left-color:var(--now)}
+  .tag{display:inline-block;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.68rem;
+       font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:4px;margin-bottom:8px}
+  .tag.h{color:var(--hist);background:var(--hist-bg)}
+  .tag.n{color:var(--now);background:var(--now-bg)}
+
+  .form{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.83rem;line-height:1.85;
+        background:var(--paper);border:1px solid var(--rule-soft);border-radius:8px;padding:14px 16px;margin:10px 0 14px}
+  .form .row{display:flex;justify-content:space-between;gap:14px;border-bottom:1px dotted var(--rule-soft);padding:1px 0}
+  .form .row:last-child{border-bottom:none}
+  .form .row span:last-child{white-space:nowrap;color:var(--ink-soft)}
+  .form .row.tot{font-weight:700;border-top:1.5px solid var(--rule);border-bottom:none;margin-top:5px;padding-top:5px}
+  .form .row.tot span:last-child{color:var(--ink)}
+
+  .swap{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.84rem;background:var(--hist-bg);
+        border-radius:8px;padding:11px 14px;margin:12px 0}
+  .swap b{color:var(--hist)}
+  .swap .arrow{color:var(--hist);font-weight:700;padding:0 5px}
+
+  .warn{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.85rem;background:var(--warn-bg);
+         color:var(--warn);border-radius:8px;padding:11px 14px;margin:12px 0}
+  .warn b{font-weight:700}
+
+  ul,ol{margin:0 0 14px;padding-left:22px}
+  li{margin-bottom:6px}
+  .steps{font-size:.94rem}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:16px 0 22px}
+  .pick{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px 16px}
+  .pick b{display:block;font-size:.95rem;margin-bottom:3px}
+  .pick span{font-size:.86rem;color:var(--ink-soft);font-family:ui-sans-serif,system-ui,sans-serif}
+
+  .srcs{font-size:.82rem;color:var(--ink-soft);font-family:ui-sans-serif,system-ui,sans-serif}
+  .srcs li{margin-bottom:4px}
+  hr{border:none;border-top:1px solid var(--rule);margin:44px 0}
+  /* --- site chrome: a thin bar back to the rest of the site --- */
+  .sitebar{border-bottom:1px solid var(--rule);background:var(--card)}
+  .sitebar-inner{max-width:820px;margin:0 auto;padding:12px 24px;
+                 display:flex;align-items:center;justify-content:space-between;gap:16px;
+                 font-family:ui-sans-serif,system-ui,sans-serif;font-size:.86rem}
+  .sitebar a{color:var(--ink-soft);text-decoration:none}
+  .sitebar a:hover{color:var(--accent)}
+  .sitebar .mark{color:var(--accent);font-family:ui-monospace,Menlo,Consolas,monospace}
+  .theme-toggle{appearance:none;background:none;border:1px solid var(--rule);border-radius:99px;
+                color:var(--ink-soft);cursor:pointer;font:inherit;font-size:.78rem;padding:3px 11px}
+  .theme-toggle:hover{color:var(--accent);border-color:var(--accent)}
+  .backlink{margin-top:46px;padding-top:18px;border-top:1px solid var(--rule);
+            font-family:ui-sans-serif,system-ui,sans-serif;font-size:.84rem;color:var(--ink-soft)}
+
+  @media print{
+    body{background:#fff}
+    .sitebar,.backlink{display:none}
+    .recipe{break-inside:avoid;page-break-inside:avoid}
+    .wrap{max-width:none;padding:0}
+  }
+</style>
+</head>
+<body>
+<div class="sitebar">
+  <div class="sitebar-inner">
+    <a href="{{ '/' | relative_url }}"><span class="mark">~/</span>{{ site.title }}</a>
+    <button class="theme-toggle" type="button" aria-label="Toggle colour theme">theme</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+<h1>Ancient Breads</h1>
+<p class="sub">Sixteen breads from 14,400 years ago to the ones still baked this morning — each one as the evidence has it, and again as you'd actually bake it with einkorn, rye, khorasan, T65, T80 and Lev'blé.</p>
+<p class="meta">Historical version · Practical version · What they used → what you're using</p>
+
+<div class="lede">
+<p><b>How to read this.</b> Every recipe has two halves. The <span style="color:var(--hist);font-weight:600">HISTORICAL</span> block is what the archaeology, the period text or the unbroken tradition actually supports — including where it supports nothing and I'm inferring. The <span style="color:var(--now);font-weight:600">YOUR KITCHEN</span> block is a bakeable formula in your stock, at weights that work in a domestic oven.</p>
+<p>The tan <b>swap bar</b> under each pair spells out the conversion: original grain on the left, your substitute on the right, and one line on why it holds or where it breaks. Some breaks are real — barley and buckwheat have no honest substitute in your pantry, and I say so rather than fudging it.</p>
+<p style="margin-bottom:0"><b>One big thing in your favour:</b> khorasan is not merely "like" emmer. <i>Triticum turgidum</i> ssp. <i>turanicum</i> and <i>T. turgidum</i> ssp. <i>dicoccum</i> are two subspecies of the same tetraploid species, so the grain chemistry is genuinely close and most of the ancient breads here are emmer breads. The <i>dough</i> is not identical, though — khorasan is higher-protein and stronger than emmer, and free-threshing where emmer is hulled. Same species predicts the genome, not the handling.</p>
+</div>
+
+<h2>The conversion table</h2>
+
+<table>
+<thead><tr><th style="width:24%">They used</th><th style="width:26%">You use</th><th>How close, and what shifts</th></tr></thead>
+<tbody>
+<tr><td><b>Emmer</b><br><small><i>T. turgidum</i> ssp. <i>dicoccum</i></small></td><td><b>Khorasan</b>, wholemeal<br><small>freshly milled from your berries</small></td><td><b>The best swap here.</b> Same species, sibling subspecies — both tetraploid AABB, both nutty and sweet. But manage two differences: khorasan is free-threshing (no parching and pounding), and it is <b>higher-protein and stronger</b> than emmer, sitting nearer durum in handling. Hydration: Samuel measured hand-ground emmer meal at 82% and Bats' tested Egyptian formula runs at 75%; <b>start khorasan at 70%</b> and add. Much of that gap is milling coarseness, not the grain.</td></tr>
+<tr><td><b>Wild / domesticated einkorn</b><br><small><i>T. monococcum</i></small></td><td><b>Einkorn</b>, wholemeal<br><small>your berries, unsifted</small></td><td><b>Exact.</b> The one grain here you can match outright. Keep the bran in — every einkorn find in the record is wholemeal.</td></tr>
+<tr><td><b>Barley</b><br><small><i>Hordeum vulgare</i>, incl. bere</small></td><td><span style="color:var(--warn)"><b>No honest substitute.</b></span> Buy hulled barley or beremeal.</td><td>Barley is defined by what it lacks: no functional gluten at all, so it makes paste and flatcake, never a loaf. Rye is the nearest thing you own but rye's stickiness is pentosan-driven, a completely different mouthfeel. Hulled barley berries are cheap and mill fine — worth getting, since <b>four recipes here are barley-led.</b></td></tr>
+<tr><td><b>Free-threshing wheat</b><br><small>Roman <i>siligo</i>, medieval wastel</small></td><td><b>T65</b> Blanche, or <b>T80</b> Bise</td><td><b>Very good.</b> <i>Siligo</i> was milled and sieved repeatedly — that's an extraction ladder, exactly what the T numbers encode. T65 ≈ the fine sieved grades (siligo, manchet, wastel); T80 ≈ the everyday grade; T110 ≈ <i>tourte</i> / cheat bread.</td></tr>
+<tr><td><b>Rye</b><br><small><i>Secale cereale</i></small></td><td><b>Rye</b>, from your berries<br><small>T110–T170 for the dark grades</small></td><td><b>Exact.</b> For rugbrød and pumpernickel you want the berries whole or cracked, not just milled — those breads are built on soaked kernels.</td></tr>
+<tr><td><b>Club-rush tuber</b><br><small><i>Bolboschoenus glaucus</i></small></td><td><b>Tigernut (chufa) flour</b><br><small>or water-chestnut flour</small></td><td><b>Better than it sounds.</b> Tigernut is <i>Cyperus esculentus</i> — same family (Cyperaceae), same wetland sedge tuber, same cell walls that stay fibrous after cooking. That fibrousness is precisely why the excavators described the original as "gritty… but a bit sweet as well."</td></tr>
+<tr><td><b>Oats</b><br><small><i>Avena</i></small></td><td>Buy oatmeal — <b>medium and pinhead</b></td><td>Cheap, and the grade matters more than the source. Pinhead gives the coarse Highland oatcake; medium gives the thin brittle one.</td></tr>
+<tr><td><b>Spelt</b></td><td><b>Khorasan</b> (nutty route) or <b>T80</b> (structure route)</td><td>Spelt is hexaploid and holds more structure than khorasan. If a recipe uses spelt for <i>flavour</i>, go khorasan; if it uses spelt to <i>build the loaf</i>, go T80.</td></tr>
+<tr><td><b>Durum semola</b></td><td><b>Khorasan</b>, milled coarse and re-sifted</td><td><b>Good.</b> Durum is <i>T. turgidum</i> ssp. <i>durum</i> — again the same species as khorasan. Sift out the bran and you have a workable semola stand-in.</td></tr>
+<tr><td><b>Buckwheat, teff, millet</b></td><td><span style="color:var(--warn)"><b>Buy them.</b></span></td><td>No wheat substitutes. All three are non-cereals or non-wheat cereals whose whole point is what they aren't.</td></tr>
+<tr><td><b>Levain / barm / <i>zyme</i></b></td><td><b>Lev'blé</b></td><td>Where a recipe wants a stiff levain (most Roman and medieval ones do), build it at <b>2 parts flour : 1 part water</b> — Roman doughs ran 52–58% and a wet starter fights that.</td></tr>
+</tbody>
+</table>
+
+<div class="warn"><b>The einkorn rule, since it runs through everything here.</b> One HMW-glutenin locus, no <i>Glu-D1</i>, and gliadin running up to 12× glutenin. Farinograph work on <i>landrace</i> einkorn puts stability under 1.5 minutes against 4+ for common wheat — though note that bred elite lines (ID331, Monlis) test far better and can even beat a bread-wheat control on loaf volume, so this is a property of the einkorn you're likely to have, not of the species. Practically: mix briefly, don't develop it, don't give it a long final proof, keep hydration <b>5–10 points under</b> what you'd use for T65, and use Lev'blé rather than baker's yeast wherever you have the choice — fresh sourdough measurably softens einkorn crumb while doing little for common wheat. Einkorn is the one grain here where your leaven is doing structural work, not just flavour.</div>
+
+<h2>Where to start</h2>
+<div class="grid">
+<div class="pick"><b>Küllüoba loaf</b><span>Your khorasan is a sibling subspecies of the actual grain. Closest you'll get to a real Bronze Age bake in one afternoon.</span></div>
+<div class="pick"><b>Siyez ekmeği</b><span>100% einkorn, with Lev'blé. This is the direct answer to the question you asked first.</span></div>
+<div class="pick"><b>Pain de méteil</b><span>Rye + wheat, the bread that fed rural France for eight centuries. Everything already in your kitchen.</span></div>
+<div class="pick"><b>Ötzi's cracker</b><span>Twenty minutes, two ingredients, no leaven. Bakes on a stone in your oven and tastes genuinely 5,300 years old.</span></div>
+</div>
+
+<hr>
+
+<h2>I. Prehistory</h2>
+
+<div class="recipe">
+<div class="rhead"><h3>1. Shubayqa flatbread</h3><span class="date">c. 14,400 BP · Jordan</span></div>
+<p class="prov">Natufian, Black Desert. The oldest bread anyone has ever excavated. Arranz-Otaegui et al., <i>PNAS</i> 2018.</p>
+
+<div class="block h"><span class="tag h">Historical</span>
+<p>Ground wild einkorn, wild barley and possibly oat, <b>mixed with club-rush tubers</b>. Dehusked, ground, and properly sieved — 41% of particles under 0.3 mm, finer than most later Neolithic bread. Definitively unleavened: mean void size 0.15 mm against >1 mm in a raised loaf. Baked in the ashes of a fireplace or on a hot flat stone; there are no ovens anywhere at this date.</p>
+<p><b>No ratio survives.</b> The paper gives no cereal-to-tuber proportion — the 75:25 below is my inference, weighted toward cereal because the tuber flour alone is barely palatable. The excavators tasted the tuber flour and described it as "quite gritty and salty, but a bit sweet as well."</p>
+</div>
+
+<div class="block n"><span class="tag n">Your kitchen</span>
+<div class="form">
+<div class="row"><span>Einkorn wholemeal, unsifted</span><span>90 g · 45%</span></div>
+<div class="row"><span>Barley wholemeal</span><span>40 g · 20%</span></div>
+<div class="row"><span>Oat flour (blitzed oatmeal)</span><span>20 g · 10%</span></div>
+<div class="row"><span>Tigernut flour</span><span>50 g · 25%</span></div>
+<div class="row"><span>Water</span><span>130 g · 65%</span></div>
+<div class="row"><span>Salt (not evidenced — see below)</span><span>1 g · trace</span></div>
+<div class="row tot"><span>Five flatbreads, ~12 cm × 5 mm</span><span>331 g</span></div>
+</div>
+<ol class="steps">
+<li>Mix to a stiff paste. No kneading — there's nothing to develop.</li>
+<li>Rest 20 minutes. The soak matters: the archaeological starch is fully gelatinised, so the flour was wet before it met heat.</li>
+<li>Press to ~12 cm discs, 5 mm thick.</li>
+<li>Bake directly on a stone or steel at <b>250–280 °C, 3–4 minutes a side</b>. If you have a wood fire, bury them in the ash instead — that's the attested method.</li>
+</ol>
+<p><small>The salt isn't evidenced any more than it is in Ötzi's cracker below — I've kept a trace here only because <i>Bolboschoenus glaucus</i> grows in brackish water and both excavators independently described the tuber flour as tasting salty. Drop it for strict fidelity. Expect a dense, sandy, faintly sweet cracker with a saline edge. It is not good. It is, however, close to what it tasted like — Tobias Richter: "it is probably not to our particular tastes in the present."</small></p>
+</div>
+
+<div class="swap"><b>Wild einkorn</b> <span class="arrow">→</span> your einkorn (domesticated, larger grain, otherwise the same plant) · <b>club-rush tuber</b> <span class="arrow">→</span> tigernut flour (same sedge family, same fibrous cell walls, same sweet-gritty profile) · <b>wild barley &amp; oat</b> <span class="arrow">→</span> hulled barley and oatmeal. Drop the tigernut and you have a plausible flatbread; you do not have <i>this</i> flatbread.</div>
+</div>
+
+
+<div class="recipe">
+<div class="rhead"><h3>2. Ötzi's cracker</h3><span class="date">c. 3300 BC · South Tyrol</span></div>
+<p class="prov">Reconstructed from the Iceman's gut contents. Rollo et al. 2002; Maixner et al., <i>Current Biology</i> 2018.</p>
+
+<div class="block h"><span class="tag h">Historical</span>
+<p>Einkorn bran dominates the cereal residue — about 45% of the tissue in the colon sample. The particle size shows fine grinding on a saddle quern, which is why Klaus Oeggl reads it as bread rather than porridge: gruel would leave coarse whole fragments. <b>Charcoal particles are stuck to the bran</b>, so it was baked on a hot rock or beside a fire. Barley is in the same gut, so this was not necessarily 100% einkorn.</p>
+<p>Oeggl's own verdict on the product: "probably hard, somewhat like a cracker, and rather tough on the teeth."</p>
+<p><b>No experimental reconstruction of this bread has ever been published.</b> Anything sold as an "Ötzi bread recipe" is invention. So is the "5,300-year-old sourdough" story — the yeast revived from his body in 2026 is <i>Glaciozyma</i>, a cold-adapted glacier yeast that colonised the corpse, not a Neolithic bread culture.</p>
+</div>
+
+<div class="block n"><span class="tag n">Your kitchen</span>
+<div class="form">
+<div class="row"><span>Einkorn wholemeal, unsifted</span><span>200 g · 100%</span></div>
+<div class="row"><span>Water</span><span>112 g · 56%</span></div>
+<div class="row tot"><span>Six crackers, ~15 cm</span><span>312 g</span></div>
+</div>
+<ol class="steps">
+<li>Mix, knead 60 seconds only, rest 20 minutes covered.</li>
+<li>Roll to <b>2–3 mm</b> — thinner than feels right. Cut 15 cm discs.</li>
+<li>Bake on a stone at <b>250–280 °C, 2–3 minutes a side</b>, until dry and blistered with a few dark spots.</li>
+<li>Cool on a rack. They must ring hollow and snap.</li>
+</ol>
+<p><small>No salt and no leaven — neither is evidenced. If you want it edible rather than accurate, 3 g salt. If you have a fire, bake it on a stone at the edge of the coals and let a little ash touch the surface; the charcoal specks are the one detail the microscopy actually gives us.</small></p>
+</div>
+
+<div class="swap"><b>Einkorn</b> <span class="arrow">→</span> <b>einkorn.</b> Nothing to convert. Mill it coarse rather than fine if your mill allows — a saddle quern doesn't produce a uniform particle size, and the flake-like bran is the diagnostic feature of the original.</div>
+</div>
+
+
+<div class="recipe">
+<div class="rhead"><h3>3. Zürich galette</h3><span class="date">3176–3153 BC · Switzerland</span></div>
+<p class="prov">Parkhaus Opéra lakeshore settlement, layer 13. Heiss et al., <i>PLOS ONE</i> 2017. Two discs, 6 cm and 10.1 cm.</p>
+
+<div class="block h"><span class="tag h">Historical</span>
+<p>Find 2285 is <b>barley alone</b> — a single-species galette, 6 cm across, about 2 cm thick. Find 2907 is barley plus a <i>Triticum</i>, and carries <b><i>Apium graveolens</i></b> — celery. That is the first evidence for a bread condiment anywhere in the Neolithic.</p>
+<p>Deliberately mixed grind, and the two differ: <b>2285</b> runs roughly 29% fine flour / 35% semolina-grade / 36% coarse grist, while <b>2907</b> is noticeably finer at 43% / 24% / 15%. 2285 is about 2.1 cm thick, 2907 about 3.2 cm. Both are <b>"clearly unleavened, and therefore flat breads (galette)"</b> — under 5% of cavities exceed 1 mm. No intact starch granules survive, so the dough was wet before it met heat. The charring itself is read as a <b>baking accident</b>: these are two burnt ones.</p>
+<p><b>No reconstruction of these has been published.</b> The temperatures below are borrowed from EXARC's Iron Age tannur experiments — floor 350–500 °C, walls 100–120 °C, 10 minutes.</p>
+</div>
+
+<div class="block n"><span class="tag n">Your kitchen</span>
+<div class="form">
+<div class="row"><span>Barley wholemeal, deliberately uneven grind</span><span>200 g · 100%</span></div>
+<div class="row"><span>Water</span><span>120 g · 60%</span></div>
+<div class="row"><span>Celery seed, crushed (for 2907)</span><span>1 g</span></div>
+<div class="row tot"><span>Two galettes, 10 cm × 2 cm</span><span>321 g</span></div>
+</div>
+<ol class="steps">
+<li>Mill or buy barley meal, then <b>sieve and recombine deliberately</b>: about a third fine, a third semolina-grade, a third coarse grist. The mixed particle size is the archaeologically distinctive feature and it changes the texture completely.</li>
+<li>Mix to a stiff paste, rest 30 minutes. No kneading — barley has no gluten to develop.</li>
+<li>Form two discs 10 cm across, 2 cm thick. Press the crushed celery seed into the surface for the 2907 version.</li>
+<li>Bake on a stone at <b>220–230 °C for 20–25 minutes</b>. Resist the urge to go hotter: these are 2 cm thick and gluten-free, so a fierce bake chars the outside while the middle stays wet meal. (The 350–500 °C figures from the Iron Age tannur experiments are for thin breads slapped on an oven wall — a different object.) It won't rise, and shouldn't.</li>
+</ol>
+</div>
+
+<div class="swap"><b>Barley</b> <span class="arrow">→</span> <span style="color:var(--warn)"><b>barley. Don't substitute.</b></span> This recipe is a single-grain object and the grain is the whole point. Rye at 60% would give you a workable disc but a fundamentally different bread — barley reads sweet and mealy, rye reads sour and gummy. For 2907, use <b>khorasan</b> as the <i>Triticum</i> at roughly 50:50.</div>
+</div>
+
+
+<h2>II. Bronze Age</h2>
+
+<div class="recipe">
+<div class="rhead"><h3>4. The Küllüoba loaf</h3><span class="date">c. 2993 cal BC · Anatolia</span></div>
+<p class="prov">Eskişehir, Turkey. Found beside a doorway, a piece torn off, then carbonised and sealed under sterile soil — a deposit at the ritual abandonment of the building. Karaburun et al., <i>PLOS ONE</i> 2025.</p>
+
+<div class="block h"><span class="tag h">Historical</span>
+<p><b>Emmer, with lentil "in small amounts."</b> Oval, <b>12 cm across and 2.5 cm thick</b>. The flour was <b>not sieved</b> — rachis fragments are still in it. SEM shows irregular air voids of varied size, which the authors read as kneaded and <i>possibly</i> leavened, hedged carefully. Thermal analysis puts the bake above <b>150–160 °C</b>, and the starch granules kept their structure, so it was <b>brief</b>.</p>
+<div class="warn"><b>What the paper does not say.</b> The loaf contains no einkorn, no barley and no bulgur. The commercial "Küllüoba ekmeği" that Eskişehir's municipal bakery launched in 2025 — 300 g, 50 lira, 300 a day — is reported as <i>kavılca</i> wheat (which is emmer, so that part is faithful) plus <b>lentils and bulgur</b>. The bulgur has no basis in the find. No formula, hydration or baking temperature has been released, and press descriptions of the blend vary, so treat the commercial loaf as inspired-by rather than reconstructed.</div>
+</div>
+
+<div class="block n"><span class="tag n">Your kitchen</span>
+<div class="form">
+<div class="row"><span>Khorasan wholemeal, unsifted</span><span>450 g · 90%</span></div>
+<div class="row"><span>Lentil flour (green or brown, whole)</span><span>50 g · 10%</span></div>
+<div class="row"><span>Water</span><span>350 g · 70%</span></div>
+<div class="row"><span>Lev'blé, stiff</span><span>50 g · 10%</span></div>
+<div class="row"><span>Salt</span><span>8 g · 1.6%</span></div>
+<div class="row tot"><span>Two oval loaves</span><span>908 g</span></div>
+</div>
+<ol class="steps">
+<li>Mill the khorasan and <b>do not sift it</b> — the coarse fraction is the point. Blitz whole lentils to flour in a spice grinder if you don't have it.</li>
+<li>Mix everything, hold back 30 g water and add it only if the dough feels tight. Khorasan takes less than emmer.</li>
+<li>Knead lightly, 4–5 minutes. Bulk <b>3–4 hours</b> at room temperature — the "possibly leavened" reading supports a modest rise, not a doubled one.</li>
+<li>Divide and shape two ovals. The find is <b>12 cm across and 2.5 cm thick</b> — to land there <i>after</i> proof and oven spring, roll them out to about 1.5 cm and keep them tight; a 2.5 cm raw oval will finish closer to 4.</li>
+<li>Bake on a stone at <b>210–230 °C for 12–15 minutes</b>. Short and moderate — the intact starch granules argue against a long fierce bake.</li>
+</ol>
+<p><small>Salt isn't evidenced but isn't excluded either; drop it for fidelity. This is the recipe on this page where your grain is closest to the original — you are baking one subspecies of <i>Triticum turgidum</i> in place of another.</small></p>
+</div>
+
+<div class="swap"><b>Emmer</b> <span class="arrow">→</span> <b>khorasan.</b> The best swap in the collection: <i>T. turgidum</i> ssp. <i>dicoccum</i> → <i>T. turgidum</i> ssp. <i>turanicum</i>, same species. Two differences to manage — khorasan is free-threshing so you skip the parching and pounding, and it absorbs about 12 points less water (Samuel measured emmer wholemeal at 82%; run khorasan at 70% and adjust up).</div>
+</div>
+
+
+<div class="recipe">
+<div class="rhead"><h3>5. Egyptian mould bread</h3><span class="date">c. 2000–1200 BC · Egypt</span></div>
+<p class="prov">The only ancient bread with a complete, tested, numeric protocol. Adeline Bats, <i>J. Archaeol. Sci.: Reports</i> 2020 — 54 loaves baked in replica conical moulds. Grain identification from Delwen Samuel's microscopy on ~70 desiccated loaves.</p>
+
+<div class="block h"><span class="tag h">Historical</span>
+<p>"Almost all examined loaves are made from emmer wheat." Samuel's key working number: <b>emmer flour needs 82% water</b> against 69.2% for modern bread wheat. Dehusking was done by dampening the spikelets to soften the chaff, then pounding in a mortar.</p>
+<p>Bats' winning formula, verbatim: <b>1000 g black emmer wholemeal, 750 g water, 170 g einkorn sourdough starter, 15 g salt.</b> Note that Bats' own dough runs at <b>75%</b>, not Samuel's 82% — the two numbers measure different meals, and the gap is mostly milling coarseness.</p>
+<p>Moulds of local clay tempered with dung and gravel, coated inside with fine sandy clay as a release agent, laid horizontally in an open ash-and-charcoal fire kept below 500 °C, rolled with a poker every five minutes. Bats reports <b>60 minutes of baking between 100 and 120 °C</b> — that is the baking environment inside the sealed mould, not the crumb, which can't exceed ~100 °C while it's still moist. Result: fully baked, well-honeycombed crumb, clean release.</p>
+<p>Ed Wood and Mark Lehner's 1993 replica bakery at Giza found the other essential detail: <b>without a preheated lid the bread does not bake through.</b> Their failure mode was over-souring — the lactobacilli took over on a long stand.</p>
+</div>
+
+<div class="block n"><span class="tag n">Your kitchen</span>
+<div class="form">
+<div class="row"><span>Khorasan wholemeal</span><span>500 g · 100%</span></div>
+<div class="row"><span>Water</span><span>350 g · 70%</span></div>
+<div class="row"><span>Lev'blé, built with einkorn</span><span>85 g · 17%</span></div>
+<div class="row"><span>Salt</span><span>8 g · 1.5%</span></div>
+<div class="row tot"><span>One tall loaf (Bats' formula, halved)</span><span>943 g</span></div>
+</div>
+<ol class="steps">
+<li>Build your Lev'blé on einkorn flour the night before — Bats used an einkorn starter and it's what you have.</li>
+<li>Mix, knead 5 minutes, bulk <b>4 hours</b>. Do not go longer: over-souring is the documented failure mode of this bread — it's exactly what sank the 1993 Giza reconstruction.</li>
+<li><b>The mould.</b> Two unglazed terracotta flowerpots, ~18 cm, drainage holes plugged with foil. Season them, then preheat both in the oven for 30 minutes. Dust the inside of the baking pot heavily with flour.</li>
+<li>Half-fill the hot pot with dough, invert the second pot over it as a lid, and seal the join loosely with foil.</li>
+<li>Bake at <b>230 °C for 60 minutes</b>, lid on throughout. The sealed mould is what holds the interior in Bats' 100–120 °C band; without the lid it does not bake through, which is the single clearest finding from the Giza replica bakery.</li>
+<li>Lift the lid for the last 10 minutes if you want colour.</li>
+</ol>
+<p><small>Nathan Myhrvold's suggestion, after watching the Giza reconstruction, was that the original dough was <b>batter-like</b> — closer to muffin batter than a kneadable dough. If you want to test that reading, push to 90% hydration and pour rather than shape.</small></p>
+</div>
+
+<div class="swap"><b>Emmer</b> <span class="arrow">→</span> <b>khorasan</b>, Bats' 75% dropped to 70% for the stronger, finer-milled grain. <b>Einkorn starter</b> <span class="arrow">→</span> <b>Lev'blé fed on einkorn</b> — one refresh on einkorn flour gets you there. <b>Bedja mould</b> <span class="arrow">→</span> <b>two terracotta flowerpots.</b> The preheated lid is the non-negotiable part; the clay is not.</div>
+</div>
+
+
+<h2>III. Greece and Rome</h2>
+
+<div class="recipe">
+<div class="rhead"><h3>6. Maza</h3><span class="date">Classical Greece</span></div>
+<p class="prov">The everyday food of most Greeks. Not a bread in any modern sense — and mostly not baked at all.</p>
+
+<div class="block h"><span class="tag h">Historical</span>
+<p>The lexical split matters: <b>ἄλφιτα (alphita) is barley meal, ἄλευρον (aleuron) is wheat flour.</b> Maza is made from alphita, artos from aleuron, and the two never cross.</p>
+<p><b>The barley was parched or roasted before milling</b> — necessary to release the hull, and it means the meal arrives already cooked. That is why maza needed no baking. Paulus Aegineta gives the clearest ancient statement: <i>"The maza consisted of toasted barley flour pounded with liquor, such as water, oil, milk, oxycrate, oxymel, or honied water."</i> That list is your formulation matrix.</p>
+<p>Athenaeus preserves a dozen named types — <b>physte</b> (coarse Athenian), <b>amolgaia</b> (with goat's milk, Hesiod's), <b>kardamale</b> (with cress), <b>thridakiskai</b> (eaten with lettuce), <b>achilleum</b> (very fine barley, the luxury grade), <b>etnitas</b> (with pulses), <b>daratos</b> (unleavened). Archestratus rated Lesbian barley the finest, "whiter than snow."</p>
+<div class="warn"><b>Two different things share this name.</b> Classical maza proper is a cold-kneaded paste of roasted barley meal, eaten uncooked and dipped in broth. Baked barley flatcakes are the other tradition. Most modern "maza" recipes silently deliver the second. Both are below.</div>
+</div>
+
+<div class="block n"><span class="tag n">Your kitchen</span>
+<p style="font-size:.95rem;margin-bottom:6px"><b>(a) Maza proper — no baking</b></p>
+<div class="form">
+<div class="row"><span>Barley meal, dry-toasted</span><span>150 g · 100%</span></div>
+<div class="row"><span>Water</span><span>120 g · 80%</span></div>
+<div class="row"><span>Olive oil</span><span>27 g · 18%</span></div>
+<div class="row"><span>Salt</span><span>2 g</span></div>
+</div>
+<p class="steps">Toast the barley meal dry in a wide pan over medium-high heat, stirring, until deep brown and unmistakably nutty — 6–8 minutes. Off the heat, stir in water, oil and salt to an even thick paste. Cool, then shape into cakes by hand. <b>Eat as is</b>, dipped in broth, or with honey and fresh cheese. Substitute any of Paulus's liquids for the water: goat's milk for <i>amolgaia</i>, honey-and-vinegar for the oxymel version, watered wine.</p>
+
+<p style="font-size:.95rem;margin:18px 0 6px"><b>(b) Baked barley cakes — Farrell Monaco's <i>pharmakos</i> version</b></p>
+<div class="form">
+<div class="row"><span>Barley flour</span><span>325 g · 100%</span></div>
+<div class="row"><span>Water</span><span>120 g</span></div>
+<div class="row"><span>Whole milk</span><span>30 g</span></div>
+<div class="row"><span>Oxymel (honey + vinegar)</span><span>30 g</span></div>
+<div class="row"><span>Olive oil</span><span>15 g</span></div>
+<div class="row"><span>White wine</span><span>15 g</span></div>
+<div class="row tot"><span>Total liquid 210 g</span><span>~65%</span></div>
+</div>
+<p class="steps"><b>Do not knead.</b> Combine gently to a firm dough, rest 2 hours under a damp cloth, roll to <b>5 mm</b>, cut rounds, bake <b>200 °C for 20–30 minutes</b>. Serve with fresh cheese, dried figs and poppy seed.</p>
+</div>
+
+<div class="swap"><b>Barley</b> <span class="arrow">→</span> <span style="color:var(--warn)"><b>barley.</b></span> Again no substitute — and here the roasting step is half the recipe. Don't skip it: untoasted barley meal gives you a raw pasty thing, toasted gives you the nutty character the whole dish is built on. <b>Oxymel</b> <span class="arrow">→</span> 2 parts honey to 1 part red wine vinegar, warmed to dissolve.</div>
+</div>
+
+
+<div class="recipe">
+<div class="rhead"><h3>7. Artolaganon</h3><span class="date">Classical Greece</span></div>
+<p class="prov">The wheaten loaf — <i>artos</i>, the feast-day bread against everyday maza. This is the one Greek type with enough textual detail to formulate directly.</p>
+
+<div class="block h"><span class="tag h">Historical</span>
+<p>Athenaeus preserves Chrysippus of Tyana's catalogue of loaves, sorted by leaven, oven and enrichment: <b>zymites</b> (leavened), <b>klibanites</b> (baked in the portable bell oven), <b>ipnites</b> (built oven), <b>escharites</b> (brazier, "soft and delectable… dipped in sweet wine"), <b>spodites</b> (ash-baked), <b>pyrnon</b> (unsifted, wholemeal), <b>dipyros</b> (twice-baked).</p>
+<p>One genuinely technical observation survives, from Chrysippus on the <b>artopticius</b>: <i>with hard yeast, it will be white</i>, against <i>dissolved yeast</i>, which gives a lighter but less white loaf. That is a real observation about stiff versus liquid levain and its effect on crumb colour, made two thousand years before anyone had a word for it.</p>
+<p>The <b>artolaganon</b> line: <i>"a little wine, pepper, and milk … oil or lard."</i> The <b>hapalos artos</b> ("soft bread," Cappadocian): <i>"with a little milk and oil and sufficient salt,"</i> dough kept <i>"quite soft,"</i> best eaten hot.</p>
+</div>
+
+<div class="block n"><span class="tag n">Your kitchen</span>
+<div class="form">
+<div class="row"><span>T65 Blanche</span><span>600 g · 100%</span></div>
+<div class="row"><span>Whole milk</span><span>330 g · 55%</span></div>
+<div class="row"><span>Lev'blé, stiff</span><span>120 g · 20%</span></div>
+<div class="row"><span>White wine</span><span>30 g</span></div>
+<div class="row"><span>Olive oil</span><span>25 g</span></div>
+<div class="row"><span>Salt</span><span>12 g · 2%</span></div>
+<div class="row"><span>Black pepper, coarse</span><span>2 g</span></div>
+<div class="row tot"><span>Four thin discs</span><span>1119 g</span></div>
+</div>
+<ol class="steps">
+<li>Knead thoroughly, adding the milk gradually — this dough wants development, unlike almost everything else here.</li>
+<li><b>Rest overnight</b>, cool.</li>
+<li>Re-knead briefly, divide in four, shape thin discs, rest 15 minutes.</li>
+<li>Bake <b>230 °C, 15–20 minutes</b>, or under an inverted heavy pot if you want the <i>klibanos</i> effect.</li>
+</ol>
+<p><small>For <b>hapalos artos</b> instead: 500 g T65, 340 g whole milk (68%), 40 g olive oil, 10 g salt, 100 g stiff Lev'blé. Keep it deliberately slack, bake hot, eat warm — the source insists on all three.</small></p>
+</div>
+
+<div class="swap"><b><i>Aleuron</i> / free-threshing wheat</b> <span class="arrow">→</span> <b>T65.</b> Straightforward: this is the prestige refined flour of its day and T65 is the modern equivalent grade. Use <b>T80</b> if you want the <i>pyrnon</i> (wholemeal) version instead. A period-plausible starter, if you want to go further: 500 g barley flour and water, roasted until browning, then left to sour for a week.</div>
+</div>
+
+
+<div class="recipe">
+<div class="rhead"><h3>8. Panis quadratus</h3><span class="date">AD 79 · Pompeii</span></div>
+<p class="prov">The eight-segment Roman loaf, from the carbonised examples in the Bakery of Modestus. Four published reconstructions disagree instructively.</p>
+
+<div class="block h"><span class="tag h">Historical</span>
+<p>The 2023 interdisciplinary study (Cardenas, Yarza, Matterne &amp; Arranz-Otaegui) makes the argument that matters: <b>most reconstructions use roller-milled flour, which produces a fundamentally different bread.</b> Stone-milling and sieving are the variables — not the shaping tricks. Their formula runs at <b>52% hydration</b>, well under everyone else's, <b>mixed but not kneaded, not autolysed, not folded</b>.</p>
+<p><b>A live dispute worth knowing about.</b> The 2023 team argue the equatorial groove comes from <b>two stacked dough discs</b>. Farrell Monaco, analysing all 81 carbonised loaves from Modestus's oven for the Bloomsbury <i>Handbook of Experimental Approaches to Roman Archaeology</i>, concludes <b>cord really was tied round the waist</b>. Nobody has settled it. Bake it either way.</p>
+<p>The segments were <b>pressed, not cut</b> — blunt impressions radiating from a central navel. The low hydration is functional: the loaf has to hold a stamped impression and eight defined wedges without spreading.</p>
+</div>
+
+<div class="block n"><span class="tag n">Your kitchen</span>
+<div class="form">
+<div class="row"><span>T80 Bise</span><span>625 g · 70%</span></div>
+<div class="row"><span>Khorasan wholemeal</span><span>265 g · 30%</span></div>
+<div class="row"><span>Water</span><span>475 g</span></div>
+<div class="row"><span>Lev'blé, stiff (2 flour : 1 water)</span><span>195 g</span></div>
+<div class="row"><span>Salt</span><span>17 g · 1.9%</span></div>
+<div class="row tot"><span>One loaf, ~20 cm · hydration ~53%</span><span>1577 g</span></div>
+</div>
+<ol class="steps">
+<li>Mix everything to a shaggy mass and <b>stop</b>. No kneading, no autolyse, no folds — this is the 2023 study's central claim and it changes the crumb.</li>
+<li>Single bulk ferment until doubled, <b>about 5 hours</b>.</li>
+<li>Shape one ball — the Roman unit was four <i>librae</i>, about <b>1310 g</b>, so scale a piece to that and bake the remaining ~265 g as a test roll. Press gently into a 20 cm round tin or onto a peel.</li>
+<li><b>The groove, route A:</b> tie heavy untreated garden twine loosely round the waist. <b>Route B:</b> shape two discs and stack them. Try both and pick a side.</li>
+<li>Press eight radiating segments with a thin dowel or the back of a knife — <b>press, don't cut</b>. Thumb a navel in the centre.</li>
+<li>Bake at <b>220 °C for 30 minutes: 20 covered, 10 uncovered.</b> Internal 93 °C.</li>
+</ol>
+</div>
+
+<div class="swap"><b><i>Siligo</i> (repeatedly sieved wheat)</b> <span class="arrow">→</span> <b>T80.</b> The Roman grades were an extraction ladder and so are the T numbers — T80 sits about where the everyday bakery grade did. Use T65 for a whiter, more aristocratic loaf. <b>The spelt</b> that every published reconstruction uses as its second flour <span class="arrow">→</span> <b>khorasan</b>: it's carrying flavour rather than structure there, so the tetraploid swap holds. Stone-mill the khorasan yourself if you can — the 2023 paper's whole point is that the milling matters more than the shaping.</div>
+</div>
+
+
+<div class="recipe">
+<div class="rhead"><h3>9. Pliny's leaven</h3><span class="date">1st c. AD · a sidebar</span></div>
+<p class="prov"><i>Natural History</i> XVIII.26, "The various kinds of leaven." Four methods, two of them seasonal.</p>
+
+<div class="block h"><span class="tag h">Historical</span>
+<ol class="steps">
+<li><b>Millet and must.</b> "Millet is more particularly employed for making leaven; and if kneaded with must, it will keep a whole year."</li>
+<li><b>Wheat bran and white must.</b> Finest bran "kneaded with white must three days old, and then dried in the sun," formed into small cakes. To use: soaked in water, then boiled with fine spelt flour.</li>
+<li><b>Barley cakes soured in the dark.</b> Barley and water into two-pound cakes, baked on a hot hearth or in an earthen dish on ashes and charcoal until reddish-brown, then sealed away "until they turn quite sour." Steeped in water when needed. <b>The only one of the three leaven-cakes you can make year-round</b> — the other two need must, so they're vintage-only.</li>
+<li><b>Yesterday's dough.</b> "A little of the dough that has been kept from the day before." The everyday bakery practice, then as now.</li>
+</ol>
+<p>Pliny also records the Greek convention of roughly eight ounces of leaven per <i>modius</i> of meal — a small-percentage levain — and, separately, that Gaulish and Spanish bakers skimmed <b>beer barm</b> for a lighter loaf than anywhere else.</p>
+</div>
+
+<div class="block n"><span class="tag n">Your kitchen</span>
+<p class="steps">You already have Lev'blé, so treat this as an experiment rather than a need. <b>Method 1, over 4–5 days:</b> 2 cups millet flour (or T80), 2 cups grapes — <b>unwashed</b>, the bloom is the whole point — 2 cups tepid water. Crush the grapes in cheesecloth, drain the excess, and bury the pouch in the flour-and-water slurry. Keep warm, loosely covered. Once it bubbles, at day 2–3, pull the pouch and transfer to a clean jar; feed ½ cup flour and ½ cup water. Feed again on days 3–4. By day 5 it should be vigorously active.</p>
+<p class="steps">Maintain it <b>stiff — 1 cup taken, 1 cup flour and ½ cup water back.</b> That 2:1 ratio is what makes it usable in the 52–58% Roman doughs; a wet starter fights them.</p>
+</div>
+
+<div class="swap"><b>Millet flour</b> <span class="arrow">→</span> <b>T80</b> works, though millet is cheap and worth buying for one experiment. <b>Must</b> <span class="arrow">→</span> crushed fresh grapes, skins on. Given your cellar, the wild yeast on a bunch of unwashed wine grapes at harvest is exactly the material Pliny meant.</div>
+</div>
+
+
+<div class="recipe">
+<div class="rhead"><h3>10. Cato's <i>panis depsticius</i></h3><span class="date">c. 160 BC · Rome</span></div>
+<p class="prov"><i>De Agri Cultura</i>, ch. 74. The whole recipe, essentially in full.</p>
+
+<div class="block h"><span class="tag h">Historical</span>
+<p>Verbatim: <i>"Wash your hands and a bowl thoroughly. Pour meal into the bowl, add water gradually, and knead thoroughly. When it is well kneaded, roll out and bake under a crock."</i></p>
+<p>Note what's absent: <b>no leaven, no salt, no quantities.</b> <i>Depsticius</i> means "well-kneaded" — the kneading <i>is</i> the recipe. The "crock" is the <b><i>testum</i></b>, an earthenware dome set over the loaf on the hearth and heaped with coals.</p>
+</div>
+
+<div class="block n"><span class="tag n">Your kitchen</span>
+<div class="form">
+<div class="row"><span>Khorasan wholemeal</span><span>500 g · 100%</span></div>
+<div class="row"><span>Water</span><span>300 g · 60%</span></div>
+<div class="row tot"><span>One flat loaf</span><span>800 g</span></div>
+</div>
+<p class="steps">Knead hard for a full 10 minutes — this is the only instruction Cato gives, so honour it. Flatten to ~2 cm. Bake under a preheated Dutch oven or heavy inverted pot on the oven floor at <b>220 °C for 30–40 minutes</b>. Add 8 g salt if you want it edible by modern standards, but it isn't in Cato.</p>
+<p class="steps"><small>Two more from the same chapters, if you're curious. <b><i>Libum</i></b> (ch. 75): 655 g fresh cheese to 327 g flour, one egg, baked slowly under a crock on bay leaves — a 2:1 cheese-to-flour ratio, which is why it's a cheesecake with flour in it rather than a bread. <b><i>Placenta</i></b> (ch. 76): the honey-and-sheep's-cheese layer cake. The EXARC replication found that the <i>tracta</i> pastry sheets <b>dissolve into the filling unless you use the soaked-farro paste</b> — that step raises hydration from 48% to 75% and is the difference between layers and mush.</small></p>
+</div>
+
+<div class="swap"><b>Emmer / coarse meal</b> <span class="arrow">→</span> <b>khorasan wholemeal.</b> Cato just says <i>farina</i>, so anything coarse and period-plausible is defensible; khorasan is the closest thing you own to what a Republican farmstead would have milled. <b><i>Testum</i></b> <span class="arrow">→</span> <b>Dutch oven, inverted, preheated.</b></div>
+</div>
+
+
+<div class="recipe">
+<div class="rhead"><h3>11. Buccellatum</h3><span class="date">Roman army ration</span></div>
+<p class="prov">The twice-baked biscuit that fed the legions. Named separately from bread in Constantius's 360 CE constitution: <i>"buccellatum and bread, wine and vinegar."</i></p>
+
+<div class="block h"><span class="tag h">Historical</span>
+<p>Pliny lists <i>panis militaris castrensis</i> among the bread types and notes it is <b>heavier than other kinds</b>. Zonaras glosses buccellatum as a <b>ring-shaped roll</b> — the annular form matters, for stringing and for drying evenly.</p>
+<p>The number to bake to: <b>rebaking 850 g of bread yields about 650 g of biscuit</b>, roughly a <b>24% weight loss on the second bake</b>, with minimal nutritional loss and a keeping time of a month or more. No fat, ever — fat goes rancid, which is the whole reason it isn't there.</p>
+</div>
+
+<div class="block n"><span class="tag n">Your kitchen</span>
+<div class="form">
+<div class="row"><span>Khorasan, milled and sifted to semola grade</span><span>400 g · 100%</span></div>
+<div class="row"><span>Water</span><span>210 g · 53%</span></div>
+<div class="row"><span>Lev'blé, stiff</span><span>80 g</span></div>
+<div class="row"><span>Salt</span><span>6 g</span></div>
+<div class="row tot"><span>~10 small rings</span><span>696 g</span></div>
+</div>
+<ol class="steps">
+<li>Knead smooth. <b>Rest overnight.</b></li>
+<li>Shape small rings, 8–9 cm across. Rest 30 minutes.</li>
+<li><b>First bake: 200 °C, 30 minutes.</b> Cool completely — this matters, the biscuit has to set before it dries.</li>
+<li><b>Second bake: 150 °C, 45–90 minutes.</b> Weigh them and bake to the number, not the clock — you are driving off about a quarter of the original weight as water, and that takes far longer than most twice-bake recipes admit.</li>
+<li>Store in a cloth bag somewhere dry. To eat: soak in wine, <i>posca</i> or soup.</li>
+</ol>
+</div>
+
+<div class="swap"><b>Re-milled durum semolina</b> <span class="arrow">→</span> <b>khorasan, sifted.</b> Both are <i>T. turgidum</i>; mill coarse and sift the bran out and you have a very fair semola. This is the recipe where khorasan's tetraploid identity is doing exactly the job durum did.</div>
+</div>
+
+
+<h2>IV. Medieval and early modern</h2>
+
+<div class="recipe">
+<div class="rhead"><h3>12. Pain de méteil</h3><span class="date">Medieval → 19th c. · France</span></div>
+<p class="prov">Rye and wheat sown together and threshed together — crop insurance that became a bread. <i>Méteil</i> from Latin <i>mistilium</i>, "mixed."</p>
+
+<div class="block h"><span class="tag h">Historical</span>
+<p>The legal definition still reserves the name for wheat and rye <b>grown and threshed together</b>, rye at 50% or more — not blended at the mill afterward. It fed rural France for eight centuries: Massif Central, Auvergne, Brittany, the Alps, the Ardennes, the Vosges. <i>Froment</i> was for towns and for people with money.</p>
+<p>Gervase Markham, 1615, gives the practical instruction that period bakers actually needed, and it's the one modern recipes leave out: <b>"because Rye is a little stronger grain than wheat it shall be good for you to put your water a little hotter then you did to your wheat."</b></p>
+</div>
+
+<div class="block n"><span class="tag n">Your kitchen</span>
+<div class="form">
+<div class="row"><span>Rye, freshly milled</span><span>550 g · 55%</span></div>
+<div class="row"><span>T80 Bise</span><span>450 g · 45%</span></div>
+<div class="row"><span>Water (warm for the rye)</span><span>720 g · 72%</span></div>
+<div class="row"><span>Lev'blé</span><span>250 g · 25%</span></div>
+<div class="row"><span>Salt</span><span>20 g · 2%</span></div>
+<div class="row tot"><span>Two loaves</span><span>1990 g</span></div>
+</div>
+<ol class="steps">
+<li>Mix 10 minutes. Warm water for the rye fraction, per Markham.</li>
+<li>Bulk 2–3 hours, or overnight in the fridge.</li>
+<li>Shape, final proof 60 minutes. Rye will not double — 30–50% is the target and waiting longer just collapses it.</li>
+<li>Dust with rye, score a cross. <b>Bake 250 °C with steam for 15 minutes, then 220 °C for 30–35 minutes.</b></li>
+<li>Wait <b>24 hours before slicing.</b> Non-negotiable with this much rye — the starch has to retrograde or you'll cut into gum.</li>
+</ol>
+<p class="steps"><small><b>To go fully faithful:</b> mill your rye and wheat berries <i>together</i> in one pass rather than blending two flours. That's what the word actually means, and it's a distinction you're equipped to make.</small></p>
+</div>
+
+<div class="swap"><b>Rye</b> <span class="arrow">→</span> <b>your rye berries.</b> <b><i>Froment</i></b> <span class="arrow">→</span> <b>T80</b>, or T110 for a darker, more rural loaf. Nothing here needs substituting — this is the one bread in the collection you can bake entirely from stock, tonight.</div>
+</div>
+
+
+<div class="recipe">
+<div class="rhead"><h3>13. Markham's cheat bread</h3><span class="date">1615 · England</span></div>
+<p class="prov">The fullest period English bread method that survives, from <i>The English Huswife</i>. Everyday bread — one rung below manchet.</p>
+
+<div class="block h"><span class="tag h">Historical</span>
+<p>Three things worth stealing from Markham's text. <b>The overnight sponge:</b> strained sour leaven and warm water stirred into part of the flour until it is <i>"as thick as a pancake batter,"</i> then <i>"cover it all over with meal, and so let it lie all that night."</i> Covering a wet sponge with dry flour instead of a cloth — it skins over and protects itself.</p>
+<p><b>The salted leaven:</b> the piece saved from the last batch is <i>"well filled with salt, and so laid up to sour."</i> Salting a levain to slow it between weekly bakes.</p>
+<p><b>The maslin licence,</b> verbatim: <i>"you may bake any bread leavened or unleavened whatsoever whether it be simple corn, as Wheat or Rye of itself, or compound grain as wheat and rye, or wheat, rye and barley, or rye and barley."</i> The whole medieval grain ladder, in one sentence, treated as one method.</p>
+<p>Note also that the Assize of Bread ladder — simnel, wastel, cocket, whole wheat, treet, horsebread — is <b>a sieving ladder, not a recipe ladder.</b> The wheaten grades are the same dough. What changes is the bolting cloth, and therefore the extraction rate. Which is exactly what your T numbers are.</p>
+</div>
+
+<div class="block n"><span class="tag n">Your kitchen</span>
+<div class="form">
+<div class="row"><span>T110 (or T80 + 15% rye)</span><span>1000 g · 100%</span></div>
+<div class="row"><span>Water, warm</span><span>600 g · 60%</span></div>
+<div class="row"><span>Lev'blé</span><span>200 g · 20%</span></div>
+<div class="row"><span>Salt</span><span>18 g · 1.8%</span></div>
+<div class="row tot"><span>Two large loaves</span><span>1818 g</span></div>
+</div>
+<ol class="steps">
+<li><b>Evening:</b> break the Lev'blé into warm water, strain it, and pour into a well in about a third of the flour. Stir to <b>pancake-batter consistency</b>. Now cover the batter with the remaining dry flour and leave overnight, uncovered under its own flour blanket.</li>
+<li><b>Morning:</b> stir everything together with a little more warm water and the salt. <i>"Knead it, break it, and tread it"</i> — Markham means work it hard.</li>
+<li>Bulk 2–3 hours. Shape <i>"reasonable big loaves."</i></li>
+<li>Bake at <b>230 °C for 20 minutes, then 200 °C for 30</b>. Markham says "an indifferent good heat," which is about right.</li>
+</ol>
+<p class="steps"><small>For <b>manchet</b> instead — the top of the ladder — go T65 at <b>~58%</b> and keep it deliberately stiff — the 1594 text says <i>"as hard as ye can handle it… without any more liquor,"</i> and read literally its quantities come out around 33%, which is damp crumbs rather than dough, so the period wording is doing rhetorical work. Here's the counterintuitive part: <b>bake it at 105 °C for an hour and keep the crust pale.</b> Period manchet was a soft-crusted white bread, not a golden one.</small></p>
+</div>
+
+<div class="swap"><b>Cheat-grade meal</b> <span class="arrow">→</span> <b>T110</b>, which sits almost exactly where "bolted through a more coarse bolter than was used for your manchets" lands. <b>Manchet</b> <span class="arrow">→</span> <b>T65</b>. <b>Ale barm</b> <span class="arrow">→</span> <b>Lev'blé</b>, though Markham's own distinction is worth knowing: manchet is barm-leavened only, cheat bread is sourdough-leavened with barm secondary.</div>
+</div>
+
+
+<h2>V. Still baked today</h2>
+
+<div class="recipe">
+<div class="rhead"><h3>14. Scottish oatcakes and bere bannock</h3><span class="date">Continuous tradition</span></div>
+
+<div class="block h"><span class="tag h">Historical</span>
+<p><b>Oatcakes</b> are a ratio, not a recipe: oatmeal 100 / fat 7–15 / hot water 40–50 / salt ~1. The soda in most modern versions is a 19th-century addition; the old cake is meal, water, salt and dripping. The two-stage finish is what makes them keep — set on the girdle until the edges curl, then stand the farls in a <b>banna-rack</b> before an open fire to dry through.</p>
+<p><b>Bannock:</b> the old one is unleavened barley, bere or oat meal, water or buttermilk, salt, cooked on a girdle or straight on a flat sandstone <b>bannock stane</b>. Every "traditional bere bannock" recipe online is the post-1840s chemically-raised version, and the wheat flour in all of them is there purely to compensate for bere's near-total lack of gluten.</p>
+<p><b>Bere</b> is a six-row barley landrace, possibly Neolithic, "probably Britain's oldest cereal in continuous commercial cultivation" — still grown on 5–15 hectares in Orkney and milled at Barony Mill, Birsay.</p>
+</div>
+
+<div class="block n"><span class="tag n">Your kitchen</span>
+<p style="font-size:.95rem;margin-bottom:6px"><b>Oatcakes</b></p>
+<div class="form">
+<div class="row"><span>Oatmeal — 100 g medium + 100 g fine</span><span>200 g · 100%</span></div>
+<div class="row"><span>Lard or beef dripping, melted</span><span>14 g · 7%</span></div>
+<div class="row"><span>Boiling water</span><span>90 g · 45%</span></div>
+<div class="row"><span>Salt</span><span>2.5 g</span></div>
+</div>
+<p class="steps">Stir the melted fat and salt into the meal, add boiling water, work fast to a stiff dough. Roll on a meal-strewn board to <b>3 mm</b> and cut 15 cm rounds — this batch gives you about five — quartering each into farls. Girdle or dry pan at <b>moderate</b> heat — you are drying, not browning — 5–8 minutes a side, then finish in a 120 °C oven for 20 minutes to dry through. Use pinhead oatmeal instead of medium for the coarse Highland version.</p>
+
+<p style="font-size:.95rem;margin:18px 0 6px"><b>Pre-modern bere bannock</b> — reconstructed by stripping the modern additions out</p>
+<div class="form">
+<div class="row"><span>Beremeal or barley wholemeal</span><span>250 g · 100%</span></div>
+<div class="row"><span>Buttermilk or water</span><span>150 g · 60%</span></div>
+<div class="row"><span>Salt</span><span>3 g</span></div>
+</div>
+<p class="steps">No flour, no soda, no cream of tartar. Bring to a soft dough, pat to <b>1 cm</b>, cook on a hot <b>dry ungreased</b> girdle 5 minutes a side until dry-surfaced and speckled, then dry at the oven door. Dense and crumbly by design.</p>
+</div>
+
+<div class="swap"><b>Oatmeal</b> <span class="arrow">→</span> buy it, and buy <b>two grades</b>; the grade is the recipe. <b>Beremeal</b> <span class="arrow">→</span> ordinary hulled barley, wholemeal, is a fair stand-in — bere is a landrace of the same species, and its distinctiveness is agronomic (a 90-day barley for a short northern summer) more than culinary.</div>
+</div>
+
+
+<div class="recipe">
+<div class="rhead"><h3>15. Norwegian flatbrød &amp; Breton galette</h3><span class="date">Continuous tradition</span></div>
+
+<div class="block h"><span class="tag h">Historical</span>
+<p><b>Flatbrød.</b> The Norwegian ratio is stated cleanly in the literature: <b>6–7 dl liquid per kg of meal — 60–70% hydration — plus 1 tsp salt per kg.</b> Barley, oat and rye, alone or mixed. The water goes on <b>boiling</b>, poured over the salted meal — a scald, which is what makes gluten-free meal rollable at all. As the Norwegian sources put it: <i>"kjevlingen er største kunsten"</i> — the rolling is the whole craft.</p>
+<p><b>Breton galette.</b> Ancestral formula: buckwheat, water, salt. Nothing else. The egg is a modern domestic adaptation. Hydration is around <b>200%</b> — this is a batter — with <b>4% salt</b>, which reads as wildly high until you taste it. The <b>24–48 hour cold rest</b> is the real technique: it develops the elasticity, the browning and the characteristic lacy holes. Buckwheat flour goes stale in about two months and freshness is named repeatedly as the single biggest quality variable.</p>
+</div>
+
+<div class="block n"><span class="tag n">Your kitchen</span>
+<p style="font-size:.95rem;margin-bottom:6px"><b>Flatbrød</b></p>
+<div class="form">
+<div class="row"><span>Barley meal (or 50 barley / 30 oat / 20 rye)</span><span>500 g · 100%</span></div>
+<div class="row"><span>Boiling water</span><span>325 g · 65%</span></div>
+<div class="row"><span>Salt</span><span>3 g</span></div>
+</div>
+<p class="steps">Pour the boiling water over the salted meal, work firm, bag it and <b>chill until cold through</b> — overnight is fine and better. Portion ~150 g per leaf. Dust the board heavily with barley flour and roll from the centre outward, as thin as you physically can. Bake on a dry pan or griddle at moderate heat until the surface dries, flip, finish to light brown spots. <b>Dry at 100 °C with the oven door ajar.</b> Stores for months.</p>
+
+<p style="font-size:.95rem;margin:18px 0 6px"><b>Galette de blé noir</b> — the crêpier's formula, no egg</p>
+<div class="form">
+<div class="row"><span>Buckwheat flour, fresh</span><span>500 g · 100%</span></div>
+<div class="row"><span>Water — half on day 1, half on day 2</span><span>1000 g · 200%</span></div>
+<div class="row"><span>Guérande sea salt</span><span>20 g · 4%</span></div>
+</div>
+<p class="steps"><b>Day 1:</b> mix the flour, salt and 500 ml water. Work it by hand with a claw grip, then <b>slap the batter with your palm for two minutes</b> to aerate it. Cover, refrigerate. <b>Rest 24 hours minimum, 48 better.</b> <b>Day 2:</b> out an hour ahead, whisk in the remaining 500 ml. Cook on a very hot greased pan or billig, <b>~200–240 °C, about a minute, traditionally one side only.</b></p>
+</div>
+
+<div class="swap"><b>Buckwheat</b> <span class="arrow">→</span> <span style="color:var(--warn)"><b>buy it, and buy it fresh.</b></span> No substitute exists — buckwheat isn't even a grass. <b>Barley/oat meal</b> <span class="arrow">→</span> the flatbrød is the one place your <b>rye</b> genuinely belongs in the mix; rye is standard in the Norwegian blends.</div>
+</div>
+
+
+<div class="recipe">
+<div class="rhead"><h3>16. Siyez ekmeği — 100% einkorn</h3><span class="date">Kastamonu, Turkey</span></div>
+<p class="prov">The bread that closes the loop. Einkorn survives as a living crop in Kastamonu — over 900 farmers still grow <i>siyez</i>.</p>
+
+<div class="block h"><span class="tag h">Historical</span>
+<p><b>Be clear about what's traditional here.</b> The Slow Food Presidium in Kastamonu is for <b>siyez <i>bulgur</i>, not bread</b>: spikelets boiled 20 minutes, cooled, sun-dried, cracked at the mill until "split in two like the wings of a mosquito," re-dried, eaten as pilaf. That's where the calories went. A Turkish food-science paper on siyez in breadmaking says flatly that its "bread production quality was found to be low," and the marketed 100% siyez loaf is a <b>modern revival product</b>.</p>
+<p>Where einkorn bread genuinely was traditional and genuinely was 100%, the record points to the western Rif in Morocco — einkorn as <i>skaliah</i>, "used for bread, either pure or mixed with other cereal and legume flours" — and to living memory in Transylvania and Slovakia, "valued for its specific taste." In all of them it's flat or griddle-baked, not a risen loaf.</p>
+</div>
+
+<div class="block n"><span class="tag n">Your kitchen</span>
+<div class="form">
+<div class="row"><span>Einkorn wholemeal, freshly milled</span><span>500 g · 100%</span></div>
+<div class="row"><span>Water, cold</span><span>300 g · 60%</span></div>
+<div class="row"><span>Lev'blé, active</span><span>125 g · 25%</span></div>
+<div class="row"><span>Salt</span><span>9 g · 1.8%</span></div>
+<div class="row tot"><span>One loaf · ~63% total hydration</span><span>934 g</span></div>
+</div>
+<ol class="steps">
+<li><b>Autolyse 30 minutes</b>, flour and water only. Sixty percent will feel dry for a wholemeal — that's correct. Einkorn holds far less than the T65 number your hands are calibrated to, and the usual first mistake is drowning it.</li>
+<li>Add Lev'blé and salt. Mix <b>3 minutes and stop</b> — past the first couple of minutes you are breaking down the little gluten network einkorn has rather than building it.</li>
+<li>Three gentle coil folds, one hour apart. Bulk ends at about <b>50% rise, not doubled.</b> Einkorn does not survive a full proof.</li>
+<li>Shape without tension — it won't hold any. <b>Cold retard 12–18 hours</b> in a banneton; the cold is what gives you a handleable dough.</li>
+<li>Bake from cold, covered, <b>230 °C for 25 minutes, then uncovered at 200 °C for 20.</b></li>
+</ol>
+<div class="warn"><b>Set expectations.</b> Deep yellow crumb — einkorn carries 8.7–11.3 mg/kg of carotenoids against about 1.0 in common wheat, and that figure is solid. Tight, even, low-volume crumb. Measurably softer with your Lev'blé than with baker's yeast, an effect specific to einkorn — common wheat barely notices the difference. Don't chase oven spring. It won't come, and the loaf is good anyway.</div>
+<p class="steps"><small><b>The more historically honest version:</b> take the same dough, divide into 6, roll to 5 mm and bake on a stone at 280 °C for 3 minutes a side. That flat, dense, deep-yellow thing is what 100% einkorn bread actually was for most of its history — and it's what the Moroccan, Transylvanian and Anatolian traditions all point at.</small></p>
+</div>
+
+<div class="swap"><b>Siyez</b> <span class="arrow">→</span> <b>your einkorn berries.</b> Same species, and the Turkish landrace has no functional advantage over what you have. <b>The one real conversion here is the format:</b> the loaf is modern, the flatbread is old. Bake both and you'll see immediately why history chose the flatbread.</div>
+</div>
+
+
+<hr>
+
+<h2>A few things that turned out not to be bread</h2>
+<p>Worth knowing, because recipes for all three circulate:</p>
+<ul>
+<li><b>Stillfried "ring breads"</b> (Lower Austria, ~960–900 BC). Three annular objects about 3 cm across, barley and a glume wheat. 66–70% micropores and non-gelatinised starch: they were <b>shaped from wet cereal and air-dried without ever being baked</b>, and they imitate the clay loom-weight rings found in the same pit. Any recipe that bakes them is inventing.</li>
+<li><b>Tollund Man's "last meal."</b> Reconstructed as <b>335 g barley, 29 g pale persicaria seed, 16 g flax</b>, plus fish, cooked as <b>porridge in a clay pot</b> — with threshing waste, sand and charcoal swept up off the floor. Porridge, not bread. The researchers never cooked a replica.</li>
+<li><b>The Ipweg "galette"</b> (Germany, c. 713 BC). A 15 cm oval that is <b>primarily beeswax</b> with traces of spelt, barley and millet — a substitute bread made as an offering. Some breads were never food.</li>
+</ul>
+
+<h2>Sources</h2>
+<ul class="srcs">
+<li><a href="https://www.pnas.org/doi/10.1073/pnas.1801071115">Arranz-Otaegui et al. 2018, <i>PNAS</i> — Shubayqa 1</a> · <a href="https://www.nbcnews.com/science/science-news/world-s-oldest-bread-found-prehistoric-site-jordan-n891921">excavators on the taste</a> · <a href="https://link.springer.com/article/10.1007/s00334-008-0162-x">Wollstonecroft et al. 2008 — club-rush tuber processing</a></li>
+<li><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0182401">Heiss et al. 2017, <i>PLOS ONE</i> — Parkhaus Opéra galettes</a> · <a href="https://exarc.net/issue-2023-2/ea/experimental-approach-tannur-ovens">EXARC 2023 — tannur oven temperatures</a></li>
+<li><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0344705">Karaburun et al. 2025, <i>PLOS ONE</i> — Küllüoba bread</a> · <a href="https://turkishminute.com/2025/05/27/ancient-bread-rises-again-as-turkey-recreates-5000-year-old-loaf/">the commercial revival</a></li>
+<li><a href="https://www.science.org/doi/10.1126/science.273.5274.488">Samuel 1996, <i>Science</i> — Egyptian baking and brewing</a> · <a href="https://www.jpost.com/archaeology/how-did-ancient-egyptians-bake-after-54-loaves-scholar-finds-answers-659163">Bats 2020 — 54 loaves, the full protocol</a> · <a href="https://aeraweb.org/feeding-pyramid-workers/">AERA — Wood &amp; Lehner's 1993 replica bakery</a></li>
+<li><a href="https://www.pbs.org/wgbh/nova/article/iceman-last-meal/">NOVA — Oeggl on Ötzi's bran and charcoal</a> · <a href="https://www.cell.com/current-biology/fulltext/S0960-9822(18)30703-6">Maixner et al. 2018, <i>Current Biology</i></a></li>
+<li><a href="https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Athenaeus/3D*.html">Athenaeus, <i>Deipnosophistae</i> III.106E–116A — the loaf and maza catalogues</a> · <a href="https://tavolamediterranea.com/2020/07/24/bread-for-the-gods-pharmakos-barley-cakes-with-cheese-and-figs/">Monaco — <i>pharmakos</i> barley cakes</a></li>
+<li><a href="http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.02.0137%3Abook%3D18%3Achapter%3D26">Pliny, <i>NH</i> XVIII.26 — the kinds of leaven</a> · <a href="https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cato/De_Agricultura/E*.html">Cato, <i>De Agri Cultura</i> 74–82</a> · <a href="https://exarc.net/issue-2024-2/ea/experimental-approach-baking-ancient-roman-placenta">EXARC 2024 — baking Roman <i>placenta</i></a></li>
+<li><a href="https://www.sciencedirect.com/science/article/abs/pii/S1878450X23000719">Cardenas et al. 2023 — disentangling the <i>panis quadratus</i></a> · <a href="https://tavolamediterranea.com/2025/04/27/how-was-the-panis-quadratus-of-pompeii-really-made/">Monaco on the 81 Modestus loaves</a> · <a href="https://www.britishmuseum.org/blog/making-2000-year-old-roman-bread">British Museum / Locatelli, 2013</a></li>
+<li><a href="https://williamrubel.com/2022/03/14/cheat-bread-gervase-markhams-everyday-loaf-from-1614/">Markham's cheat bread, verbatim</a> · <a href="https://williamrubel.com/2020/12/22/manchet-the-long-time-best-bread/">Rubel on manchet</a> · <a href="https://www.engr.psu.edu/mtah/articles/pdf/bread_assizes.pdf">Penn State — the Bread Assizes</a> · <a href="https://levainbio.com/cb/crebesc/pain-de-meteil/">Compagnons Boulangers — pain de méteil</a></li>
+<li><a href="https://www.matprat.no/oppskrifter/tradisjon/hjemmebakt-flatbrod/">MatPrat — flatbrød</a> · <a href="https://ouestdelices.com/2021/05/08/lauthentique-pate-a-galette-bretonne-au-ble-noir-ou-sarrasin/">the crêpier's galette formula</a> · <a href="https://ancestralkitchen.com/2023/01/19/traditional-scottish-oatcakes/">traditional oatcakes</a> · <a href="https://www.nts.org.uk/stories/mairi-sawyers-oatcakes">NTS — Mairi Sawyer's oatcakes</a></li>
+<li><a href="https://www.fondazioneslowfood.com/en/slow-food-presidia/siyez-wheat-bulgur/">Slow Food — siyez wheat bulgur</a> · <a href="https://www.mdpi.com/2304-8158/12/8/1610">Brandolini &amp; Hidalgo 2023 — breadmaking performance of elite einkorn lines</a> · <a href="https://www.mdpi.com/2304-8158/8/9/409">Geisslitz et al. 2019 — gluten composition of ancient wheats</a></li>
+<li><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0216907">Heiss et al. 2019 — Stillfried rings (air-dried, not baked)</a> · <a href="https://mbg.au.dk/en/news-and-events/news-item/artikel/research-reveals-recipe-of-tollund-mans-last-meal">Aarhus — Tollund Man's last meal</a></li>
+</ul>
+
+<p class="backlink">
+Baking is the hobby; the software is back at <a href="{{ '/' | relative_url }}">{{ site.title }}</a>.
+Corrections welcome — <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>.
+</p>
+
+</div>
+
+<script>
+  (function () {
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var root = document.documentElement;
+      var current = root.getAttribute('data-theme');
+      if (!current) {
+        current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      var next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>

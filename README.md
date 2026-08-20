@@ -8,9 +8,19 @@ _config.yml               title, description, contact handles
 _data/projects.yml        every project on the page  ← this is the file you edit
 _layouts/default.html     the whole page chrome
 index.html                hero + the loop over _data/projects.yml
+breads/index.html         standalone hobby page, own CSS, no layout
 assets/css/style.css      hand-written CSS, light/dark via custom properties
 assets/images/            screenshots
 ```
+
+## The breads page
+
+`breads/index.html` is deliberately not part of the layout — it keeps its own
+serif/paper styling and a self-contained `<style>` block, and only borrows two
+things from the site: the `~/Luke Pezet` bar back to the home page and the
+`localStorage['theme']` key, so the light/dark choice carries across. It's
+linked once from the low-key "Off the clock" section at the bottom of
+`index.html` and is intentionally absent from the nav.
 
 ## Adding a project
 

@@ -344,6 +344,13 @@ a:hover { text-decoration-color: var(--accent); }
 }
 .button:hover { background: var(--accent-text); }
 
+/* ------------------------------------------------------- the quiet section */
+
+.group-aside { padding: clamp(2.25rem, 4.5vw, 3rem) 0; }
+.group-aside h2 { font-size: 1.15rem; color: var(--text-muted); font-weight: 600; margin-bottom: .85rem; }
+.group-aside p { max-width: 62ch; color: var(--text-muted); font-size: .95rem; }
+.group-aside p + p { margin-top: .85rem; }
+
 /* ------------------------------------------------------------------ footer */
 
 .site-footer { padding: clamp(3rem, 7vw, 5rem) 0 3rem; }
