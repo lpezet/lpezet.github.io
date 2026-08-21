@@ -55,11 +55,26 @@ Append to `groups:` in the same file with an `id`, a `title`, and optionally a
 
 ## Previewing locally
 
-Needs Ruby:
+With Ruby, the real thing:
 
 ```bash
 bundle exec jekyll serve   # or: jekyll serve
 ```
+
+Without Ruby, `preview.py` is a ~150-line stand-in that renders the site into
+`_site/` and serves it, rebuilding on every page request so a browser reload is
+all you need:
+
+```bash
+pip install pyyaml python-liquid
+python3 preview.py --serve          # http://127.0.0.1:8765
+python3 preview.py                  # build only
+```
+
+It implements just the Liquid filters this site uses (`relative_url`,
+`absolute_url`, `slugify`, `strip_newlines`) and it is a review aid, not a build
+step — GitHub Pages still builds the published site with Jekyll, and where the
+two disagree, Jekyll is right.
 
 Section backgrounds alternate by position, so reordering groups reshuffles which
 ones are tinted. That's cosmetic.
