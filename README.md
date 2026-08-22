@@ -6,6 +6,7 @@ JavaScript beyond a 15-line theme toggle.
 ```
 _config.yml               title, description, contact handles
 _data/projects.yml        every project on the page  ← this is the file you edit
+_data/breads.yml          the sixteen recipes on /breads/
 _layouts/default.html     the whole page chrome
 index.html                hero + the loop over _data/projects.yml
 breads/index.html         standalone hobby page, own CSS, no layout
@@ -21,6 +22,32 @@ things from the site: the `~/Luke Pezet` bar back to the home page and the
 `localStorage['theme']` key, so the light/dark choice carries across. It's
 linked once from the low-key "Off the clock" section at the bottom of
 `index.html` and is intentionally absent from the nav.
+
+The recipes come from `_data/breads.yml`; everything else on that page — the
+conversion table, the "where to start" cards, the closing lists — is plain HTML
+in the template, because only the recipes repeat. Recipe numbers are generated
+from position, so inserting one renumbers the rest.
+
+Each recipe has a `historical` and a `kitchen` block, and each block is an
+ordered list of single-key nodes — `p`, `warn`, `steps`, `text`, `note`,
+`subhead`, `form` — so a recipe can mix prose, a formula and a caveat box in
+whatever order it needs. The header comment in the file has the details.
+
+```yaml
+- name: Ötzi's cracker
+  date: c. 3300 BC · South Tyrol
+  prov: Reconstructed from the Iceman's gut contents.
+  historical:
+    - p: Einkorn bran dominates the cereal residue.
+  kitchen:
+    - form:
+        rows:
+          - { item: Einkorn wholemeal, amount: 200 g · 100% }
+        total: { item: Six crackers, amount: 312 g }
+    - steps: [Mix and knead 60 seconds., Roll to 2–3 mm.]
+    - note: No salt and no leaven — neither is evidenced.
+  swap: <b>Einkorn</b> <span class="arrow">→</span> <b>einkorn.</b>
+```
 
 ## Adding a project
 
