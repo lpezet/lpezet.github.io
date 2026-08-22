@@ -6,7 +6,7 @@ JavaScript beyond a 15-line theme toggle.
 ```
 _config.yml               title, description, contact handles
 _data/projects.yml        every project on the page  ← this is the file you edit
-_data/breads.yml          the sixteen recipes on /breads/
+_data/breads.yml          every recipe on /breads/
 _layouts/default.html     the whole page chrome
 index.html                hero + the loop over _data/projects.yml
 breads/index.html         standalone hobby page, own CSS, no layout

@@ -2,7 +2,7 @@
 permalink: /breads/
 title: Ancient Breads
 description: >-
-  Sixteen breads from 14,400 years ago to the ones still baked this morning —
+  Breads from 14,400 years ago to the ones still baked this morning —
   each one as the archaeological or textual evidence has it, and again as a
   formula you can actually bake.
 ---
@@ -162,7 +162,8 @@ description: >-
 <div class="wrap">
 
 <h1>Ancient Breads</h1>
-<p class="sub">Sixteen breads from 14,400 years ago to the ones still baked this morning — each one as the evidence has it, and again as you'd actually bake it with einkorn, rye, khorasan, T65, T80 and Lev'blé.</p>
+{% assign count = 0 %}{% for s in site.data.breads.sections %}{% assign count = count | plus: s.recipes.size %}{% endfor %}
+<p class="sub">{{ count }} breads from 14,400 years ago to the ones still baked this morning — each one as the evidence has it, and again as you'd actually bake it with einkorn, rye, khorasan, T65, T80 and Lev'blé.</p>
 <p class="meta">Historical version · Practical version · What they used → what you're using</p>
 
 <div class="lede">
