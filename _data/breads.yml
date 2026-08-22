@@ -198,18 +198,18 @@ sections:
     - form:
         rows:
         - item: Khorasan wholemeal, unsifted
-          amount: 450 g · 90%
+          amount: 480 g · 90%
         - item: Lentil flour (green or brown, whole)
-          amount: 50 g · 10%
+          amount: 53 g · 10%
         - item: Water
-          amount: 350 g · 70%
-        - item: Lev'blé, stiff
-          amount: 50 g · 10%
+          amount: 367 g · 69%
+        - item: Lev'blé
+          amount: 25 g · 4.7%
         - item: Salt
-          amount: 8 g · 1.6%
+          amount: 8 g · 1.5%
         total:
           item: Two oval loaves
-          amount: 908 g
+          amount: 933 g
     - steps:
       - >-
         Mill the khorasan and <b>do not sift it</b> — the coarse fraction is the point. Blitz whole lentils
@@ -266,16 +266,16 @@ sections:
     - form:
         rows:
         - item: Khorasan wholemeal
-          amount: 500 g · 100%
+          amount: 557 g · 100%
         - item: Water
-          amount: 350 g · 70%
+          amount: 378 g · 68%
         - item: Lev'blé, built with einkorn
-          amount: 85 g · 17%
+          amount: 26 g · 4.7%
         - item: Salt
-          amount: 8 g · 1.5%
+          amount: 8 g · 1.4%
         total:
           item: One tall loaf (Bats' formula, halved)
-          amount: 943 g
+          amount: 969 g
     - steps:
       - >-
         Build your Lev'blé on einkorn flour the night before — Bats used an einkorn starter and it's what
@@ -398,22 +398,22 @@ sections:
     - form:
         rows:
         - item: T65 Blanche
-          amount: 600 g · 100%
+          amount: 680 g · 100%
         - item: Whole milk
-          amount: 330 g · 55%
-        - item: Lev'blé, stiff
-          amount: 120 g · 20%
+          amount: 370 g · 54%
+        - item: Lev'blé
+          amount: 31 g · 4.6%
         - item: White wine
           amount: 30 g
         - item: Olive oil
           amount: 25 g
         - item: Salt
-          amount: 12 g · 2%
+          amount: 12 g · 1.8%
         - item: Black pepper, coarse
           amount: 2 g
         total:
           item: Four thin discs
-          amount: 1119 g
+          amount: 1150 g
     - steps:
       - >-
         Knead thoroughly, adding the milk gradually — this dough wants development, unlike almost everything
@@ -424,8 +424,8 @@ sections:
         Bake <b>230 °C, 15–20 minutes</b>, or under an inverted heavy pot if you want the <i>klibanos</i>
         effect.
     - note: >-
-        For <b>hapalos artos</b> instead: 500 g T65, 340 g whole milk (68%), 40 g olive oil, 10 g salt,
-        100 g stiff Lev'blé. Keep it deliberately slack, bake hot, eat warm — the source insists on all
+        For <b>hapalos artos</b> instead: 567 g T65, 373 g whole milk (66%), 40 g olive oil, 10 g salt,
+        26 g Lev'blé. Keep it deliberately slack, bake hot, eat warm — the source insists on all
         three.
     swap: >-
       <b><i>Aleuron</i> / free-threshing wheat</b> <span class="arrow">→</span> <b>T65.</b> Straightforward:
@@ -457,18 +457,18 @@ sections:
     - form:
         rows:
         - item: T80 Bise
-          amount: 625 g · 70%
+          amount: 716 g · 70%
         - item: Khorasan wholemeal
-          amount: 265 g · 30%
+          amount: 304 g · 30%
         - item: Water
-          amount: 475 g
-        - item: 'Lev''blé, stiff (2 flour : 1 water)'
-          amount: 195 g
+          amount: 540 g
+        - item: Lev'blé
+          amount: 47 g
         - item: Salt
-          amount: 17 g · 1.9%
+          amount: 17 g · 1.7%
         total:
-          item: One loaf, ~20 cm · hydration ~53%
-          amount: 1577 g
+          item: One loaf, ~20 cm · hydration ~54%
+          amount: 1624 g
     - steps:
       - >-
         Mix everything to a shaggy mass and <b>stop</b>. No kneading, no autolyse, no folds — this is
@@ -476,7 +476,7 @@ sections:
       - Single bulk ferment until doubled, <b>about 5 hours</b>.
       - >-
         Shape one ball — the Roman unit was four <i>librae</i>, about <b>1310 g</b>, so scale a piece
-        to that and bake the remaining ~265 g as a test roll. Press gently into a 20 cm round tin or onto
+        to that and bake the remaining ~315 g as a test roll. Press gently into a 20 cm round tin or onto
         a peel.
       - >-
         <b>The groove, route A:</b> tie heavy untreated garden twine loosely round the waist. <b>Route
@@ -637,16 +637,16 @@ sections:
     - form:
         rows:
         - item: T65 Blanche
-          amount: 500 g · 100%
+          amount: 567 g · 100%
         - item: Water
-          amount: 307 g
-        - item: Lev'blé, stiff
-          amount: 100 g · 20%
+          amount: 340 g
+        - item: Lev'blé
+          amount: 26 g · 4.6%
         - item: Salt
           amount: 11 g · 1.9%
         total:
-          item: One loaf · hydration ~60%
-          amount: 918 g
+          item: One loaf · hydration ~61%
+          amount: 944 g
     - steps:
       - >-
         Mix, then knead properly — <b>8–10 minutes</b>. Galen is explicit that the best bread is the one
@@ -699,16 +699,16 @@ sections:
     - form:
         rows:
         - item: T80 Bise
-          amount: 500 g · 100%
+          amount: 567 g · 100%
         - item: Water
-          amount: 330 g
-        - item: Lev'blé, stiff
-          amount: 100 g · 20%
+          amount: 363 g
+        - item: Lev'blé
+          amount: 26 g · 4.6%
         - item: Salt
           amount: 11 g · 1.9%
         total:
-          item: One loaf · hydration ~64%
-          amount: 941 g
+          item: One loaf · hydration ~65%
+          amount: 967 g
     - steps:
       - Mix, knead 8 minutes. Slightly slacker than the T65 and it will feel it.
       - Bulk 4–5 hours, two folds.
@@ -764,16 +764,16 @@ sections:
     - form:
         rows:
         - item: T110
-          amount: 500 g · 100%
+          amount: 567 g · 100%
         - item: Water
-          amount: 353 g
-        - item: Lev'blé, stiff
-          amount: 100 g · 20%
+          amount: 386 g
+        - item: Lev'blé
+          amount: 26 g · 4.6%
         - item: Salt
           amount: 11 g · 1.9%
         total:
-          item: One loaf · hydration ~68%
-          amount: 964 g
+          item: One loaf · hydration ~69%
+          amount: 990 g
     - steps:
       - >-
         Mix and rest 30 minutes before kneading — at this extraction the bran needs to hydrate or it will
@@ -784,7 +784,7 @@ sections:
     - note: >-
         <b>To bake it as a ration rather than as a loaf:</b> scale to the Roman daily unit. Four <i>librae</i>
         is about <b>1310 g of baked bread</b>, which from this formula means roughly <b>750 g of flour</b>
-        — so multiply by 1.5 and bake it as one brick rather than one boule. Do that once and Cato's numbers
+        — so multiply by 1.3 and bake it as one brick rather than one boule. Do that once and Cato's numbers
         stop being numbers. It is an enormous amount of bread, and it was very nearly the entire diet.
     swap: >-
       <b><i>Cibarium</i> / the seconds fraction</b> <span class="arrow">→</span> <b>T110.</b> If you sifted
@@ -831,16 +831,16 @@ sections:
     - form:
         rows:
         - item: T170 (or your own unsifted wholemeal)
-          amount: 500 g · 100%
+          amount: 567 g · 100%
         - item: Water
-          amount: 387 g
-        - item: Lev'blé, stiff
-          amount: 100 g · 20%
+          amount: 420 g
+        - item: Lev'blé
+          amount: 26 g · 4.6%
         - item: Salt
           amount: 11 g · 1.9%
         total:
-          item: One loaf · hydration ~74%
-          amount: 998 g
+          item: One loaf · hydration ~75%
+          amount: 1024 g
     - steps:
       - >-
         <b>Autolyse 45 minutes</b> — flour and water only, no salt, no levain. Non-negotiable at this extraction.
@@ -892,21 +892,21 @@ sections:
     - form:
         rows:
         - item: T170
-          amount: 450 g · 86%
+          amount: 507 g · 86%
         - item: Coarse bran — the sidebar's pass-1 tailings
-          amount: 75 g · 14%
+          amount: 85 g · 14%
         - item: Water
-          amount: 441 g
-        - item: Lev'blé, stiff
-          amount: 100 g · 20%
+          amount: 474 g
+        - item: Lev'blé
+          amount: 27 g · 4.6%
         - item: Salt
           amount: 12 g · 2%
         total:
-          item: Two flat loaves · hydration ~80%
-          amount: 1078 g
+          item: Two flat loaves · hydration ~81%
+          amount: 1105 g
     - steps:
       - >-
-        <b>Soak the bran separately</b> in 150 g of the water for an hour, hot. Dry bran will shred what
+        <b>Soak the bran separately</b> in 170 g of the water for an hour, hot. Dry bran will shred what
         little gluten this dough can build.
       - Combine everything, mix 3 minutes, no real kneading. There is nothing here to develop.
       - >-
@@ -963,8 +963,11 @@ sections:
         pull the pouch and transfer to a clean jar; feed ½ cup flour and ½ cup water. Feed again on days
         3–4. By day 5 it should be vigorously active.
     - text: >-
-        Maintain it <b>stiff — 1 cup taken, 1 cup flour and ½ cup water back.</b> That 2:1 ratio is what
-        makes it usable in the 52–58% Roman doughs; a wet starter fights them.
+        Maintain it however you already maintain your Lev'blé — there is no need to keep a second,
+        stiffer starter for the Roman breads on this page. They run at 52–58% hydration, which a wet
+        starter would fight, so the formulas simply use <b>less of it</b>: about 4.6% of the flour,
+        where a stiff levain ran 10–25%. At that dose the water it carries is too small to move the
+        dough, and you pay for it in fermentation time instead.
     swap: >-
       <b>Millet flour</b> <span class="arrow">→</span> <b>T80</b> works, though millet is cheap and worth
       buying for one experiment. <b>Must</b> <span class="arrow">→</span> crushed fresh grapes, skins
@@ -1026,16 +1029,16 @@ sections:
     - form:
         rows:
         - item: Khorasan, milled and sifted to semola grade
-          amount: 400 g · 100%
+          amount: 453 g · 100%
         - item: Water
-          amount: 210 g · 53%
-        - item: Lev'blé, stiff
-          amount: 80 g
+          amount: 237 g · 52%
+        - item: Lev'blé
+          amount: 21 g
         - item: Salt
           amount: 6 g
         total:
           item: ~10 small rings
-          amount: 696 g
+          amount: 717 g
     - steps:
       - Knead smooth. <b>Rest overnight.</b>
       - Shape small rings, 8–9 cm across. Rest 30 minutes.
@@ -1072,18 +1075,18 @@ sections:
     - form:
         rows:
         - item: Rye, freshly milled
-          amount: 550 g · 55%
+          amount: 642 g · 55%
         - item: T80 Bise
-          amount: 450 g · 45%
+          amount: 525 g · 45%
         - item: Water (warm for the rye)
-          amount: 720 g · 72%
+          amount: 803 g · 69%
         - item: Lev'blé
-          amount: 250 g · 25%
+          amount: 54 g · 4.6%
         - item: Salt
-          amount: 20 g · 2%
+          amount: 20 g · 1.7%
         total:
           item: Two loaves
-          amount: 1990 g
+          amount: 2044 g
     - steps:
       - Mix 10 minutes. Warm water for the rye fraction, per Markham.
       - Bulk 2–3 hours, or overnight in the fridge.
@@ -1132,16 +1135,16 @@ sections:
     - form:
         rows:
         - item: T110 (or T80 + 15% rye)
-          amount: 1000 g · 100%
+          amount: 1133 g · 100%
         - item: Water, warm
-          amount: 600 g · 60%
+          amount: 667 g · 59%
         - item: Lev'blé
-          amount: 200 g · 20%
+          amount: 52 g · 4.6%
         - item: Salt
-          amount: 18 g · 1.8%
+          amount: 18 g · 1.6%
         total:
           item: Two large loaves
-          amount: 1818 g
+          amount: 1870 g
     - steps:
       - >-
         <b>Evening:</b> break the Lev'blé into warm water, strain it, and pour into a well in about a
@@ -1294,16 +1297,16 @@ sections:
     - form:
         rows:
         - item: Einkorn wholemeal, freshly milled
-          amount: 500 g · 100%
+          amount: 583 g · 100%
         - item: Water, cold
-          amount: 300 g · 60%
+          amount: 342 g · 59%
         - item: Lev'blé, active
-          amount: 125 g · 25%
+          amount: 27 g · 4.6%
         - item: Salt
-          amount: 9 g · 1.8%
+          amount: 9 g · 1.5%
         total:
-          item: One loaf · ~63% total hydration
-          amount: 934 g
+          item: One loaf · ~60% total hydration
+          amount: 961 g
     - steps:
       - >-
         <b>Autolyse 30 minutes</b>, flour and water only. Sixty percent will feel dry for a wholemeal
