@@ -18,6 +18,11 @@
 #   subhead  a label above a formula, when a recipe has more than one
 #   form     rows: [{item, amount}], plus an optional `total` row
 #
+# Percentages in a form are baker's percentages against the flour in that same
+# formula, so the water row shows hydration as mixed. The `total` row's figure
+# is the whole dough, which also counts the flour and water inside the Lev'blé
+# — hence the point or two of difference between the two.
+#
 # Every string is rendered as HTML, not escaped, so <b>, <i> and <a> work.
 # Use <span class="no"> for the red "no honest substitute" styling.
 
@@ -357,9 +362,9 @@ sections:
         - item: Barley flour
           amount: 325 g · 100%
         - item: Water
-          amount: 120 g
+          amount: 120 g · 37%
         - item: Whole milk
-          amount: 30 g
+          amount: 30 g · 9%
         - item: Oxymel (honey + vinegar)
           amount: 30 g
         - item: Olive oil
@@ -465,13 +470,13 @@ sections:
         - item: Khorasan wholemeal
           amount: 304 g · 30%
         - item: Water
-          amount: 540 g
+          amount: 540 g · 53%
         - item: Lev'blé
           amount: 47 g
         - item: Salt
           amount: 17 g · 1.7%
         total:
-          item: One loaf, ~20 cm · hydration ~54%
+          item: One loaf, ~20 cm · total hydration ~54%
           amount: 1624 g
     - steps:
       - >-
@@ -644,13 +649,13 @@ sections:
         - item: T65 Blanche
           amount: 567 g · 100%
         - item: Water
-          amount: 340 g
+          amount: 340 g · 60%
         - item: Lev'blé
           amount: 26 g · 4.6%
         - item: Salt
           amount: 11 g · 1.9%
         total:
-          item: One loaf · hydration ~61%
+          item: One loaf · total hydration ~61%
           amount: 944 g
     - steps:
       - >-
@@ -707,13 +712,13 @@ sections:
         - item: T80 Bise
           amount: 567 g · 100%
         - item: Water
-          amount: 363 g
+          amount: 363 g · 64%
         - item: Lev'blé
           amount: 26 g · 4.6%
         - item: Salt
           amount: 11 g · 1.9%
         total:
-          item: One loaf · hydration ~65%
+          item: One loaf · total hydration ~65%
           amount: 967 g
     - steps:
       - Mix, knead 8 minutes. Slightly slacker than the T65 and it will feel it.
@@ -773,13 +778,13 @@ sections:
         - item: T110
           amount: 567 g · 100%
         - item: Water
-          amount: 386 g
+          amount: 386 g · 68%
         - item: Lev'blé
           amount: 26 g · 4.6%
         - item: Salt
           amount: 11 g · 1.9%
         total:
-          item: One loaf · hydration ~69%
+          item: One loaf · total hydration ~69%
           amount: 990 g
     - steps:
       - >-
@@ -842,13 +847,13 @@ sections:
         - item: T170 (or your own unsifted wholemeal)
           amount: 567 g · 100%
         - item: Water
-          amount: 420 g
+          amount: 420 g · 74%
         - item: Lev'blé
           amount: 26 g · 4.6%
         - item: Salt
           amount: 11 g · 1.9%
         total:
-          item: One loaf · hydration ~75%
+          item: One loaf · total hydration ~75%
           amount: 1024 g
     - steps:
       - >-
@@ -907,13 +912,13 @@ sections:
         - item: Coarse bran — the sidebar's pass-1 tailings
           amount: 85 g · 14%
         - item: Water
-          amount: 474 g
+          amount: 474 g · 80%
         - item: Lev'blé
           amount: 27 g · 4.6%
         - item: Salt
           amount: 12 g · 2%
         total:
-          item: Two flat loaves · hydration ~81%
+          item: Two flat loaves · total hydration ~81%
           amount: 1105 g
     - steps:
       - >-
@@ -1321,7 +1326,7 @@ sections:
         - item: Salt
           amount: 9 g · 1.5%
         total:
-          item: One loaf · ~60% total hydration
+          item: One loaf · total hydration ~60%
           amount: 961 g
     - steps:
       - >-
