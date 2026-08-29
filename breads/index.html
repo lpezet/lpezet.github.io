@@ -81,7 +81,7 @@ description: >-
   tbody tr:last-child td{border-bottom:none}
 
   .recipe{background:var(--card);border:1px solid var(--rule);border-radius:12px;
-          padding:24px 26px;margin:0 0 26px}
+          padding:24px 26px;margin:0 0 26px;scroll-margin-top:16px}
   .rhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:2px}
   .rhead h3{margin:0;font-size:1.22rem}
   .date{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.74rem;font-weight:600;
@@ -137,6 +137,8 @@ description: >-
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:16px 0 22px}
   .pick{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px 16px}
   .pick b{display:block;font-size:.95rem;margin-bottom:3px}
+  .pick b a{color:var(--accent);text-decoration:none}
+  .pick b a:hover{text-decoration:underline}
   .pick span{font-size:.86rem;color:var(--ink-soft);font-family:ui-sans-serif,system-ui,sans-serif}
 
   .subhead{font-size:.95rem;margin:18px 0 6px}
@@ -224,10 +226,10 @@ description: >-
 
 <h2 id="where-to-start">Where to start</h2>
 <div class="grid">
-<div class="pick"><b>Küllüoba loaf</b><span>Your khorasan is a sibling subspecies of the actual grain. Closest you'll get to a real Bronze Age bake in one afternoon.</span></div>
-<div class="pick"><b>Siyez ekmeği</b><span>100% einkorn, with Lev'blé. This is the direct answer to the question you asked first.</span></div>
-<div class="pick"><b>Pain de méteil</b><span>Rye + wheat, the bread that fed rural France for eight centuries. Everything already in your kitchen.</span></div>
-<div class="pick"><b>Ötzi's cracker</b><span>Twenty minutes, two ingredients, no leaven. Bakes on a stone in your oven and tastes genuinely 5,300 years old.</span></div>
+<div class="pick">{% assign pick = "The Küllüoba loaf" %}<b><a href="#{{ pick | slugify }}">Küllüoba loaf</a></b><span>Your khorasan is a sibling subspecies of the actual grain. Closest you'll get to a real Bronze Age bake in one afternoon.</span></div>
+<div class="pick">{% assign pick = "Siyez ekmeği — 100% einkorn" %}<b><a href="#{{ pick | slugify }}">Siyez ekmeği</a></b><span>100% einkorn, with Lev'blé. This is the direct answer to the question you asked first.</span></div>
+<div class="pick">{% assign pick = "Pain de méteil" %}<b><a href="#{{ pick | slugify }}">Pain de méteil</a></b><span>Rye + wheat, the bread that fed rural France for eight centuries. Everything already in your kitchen.</span></div>
+<div class="pick">{% assign pick = "Ötzi's cracker" %}<b><a href="#{{ pick | slugify }}">Ötzi's cracker</a></b><span>Twenty minutes, two ingredients, no leaven. Bakes on a stone in your oven and tastes genuinely 5,300 years old.</span></div>
 </div>
 
 <hr>
@@ -238,7 +240,7 @@ description: >-
 
 {% for r in section.recipes %}
 {% assign n = n | plus: 1 %}
-<div class="recipe">
+<div class="recipe" id="{{ r.name | slugify }}">
 <div class="rhead"><h3>{{ n }}. {{ r.name }}</h3><span class="date">{{ r.date }}</span></div>
 {% if r.prov %}<p class="prov">{{ r.prov }}</p>{% endif %}
 
