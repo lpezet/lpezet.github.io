@@ -145,6 +145,27 @@ description: >-
   .callout .kick{color:var(--ink-soft)}
   .callout p:last-child{margin-bottom:0}
 
+  /* ---- calendar export ---- */
+  .cal{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:16px 0 0}
+  .cal-card{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:16px 18px}
+  .cal-card h3{margin:0 0 4px;font-size:1rem}
+  .cal-card .note{margin:0 0 12px}
+  .cal-row{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px}
+  .cal-row .field{flex:1 1 150px;gap:5px}
+  input[type="date"]{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.92rem;
+                     padding:7px 10px;border:1px solid var(--rule);border-radius:8px;
+                     background:var(--paper);color:var(--ink);width:100%;min-width:0}
+  input[type="date"]:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  .btn{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.78rem;font-weight:600;
+       letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;
+       padding:8px 15px;border:1px solid var(--accent);border-radius:99px;
+       background:var(--accent);color:var(--card);cursor:pointer}
+  .btn:hover{filter:brightness(1.07)}
+  .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .cal-said{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.82rem;
+            color:var(--now);margin:10px 0 0;min-height:1.2em}
+  .cal-said:empty{margin:0}
+
   ul,ol{margin:0 0 14px;padding-left:22px}
   li{margin-bottom:8px}
   .foot{margin-top:34px;padding-top:16px;border-top:1px solid var(--rule);
@@ -405,6 +426,46 @@ description: >-
   </div>
 </section>
 
+<!-- ================= REMINDERS ================= -->
+<section>
+  <p class="kick">Reminders</p>
+  <h2>Put the schedule on your phone</h2>
+  <p>Feeding a starter is not hard, it is just easy to forget on day four. These build a calendar file in your browser — nothing is uploaded and nothing is stored — which you open once on your phone to drop the feeds in with an alarm on each. Times are floating, so they follow whatever timezone you are standing in.</p>
+
+  <div class="cal">
+    <div class="cal-card">
+      <h3>The raise</h3>
+      <p class="note">Every feed from day one to the first bake, each carrying that day&rsquo;s actual instruction, plus a weekly nudge for the mother once it is established. Follows whichever schedule is selected above.</p>
+      <div class="cal-row">
+        <div class="field">
+          <label for="raiseDate">Day 1</label>
+          <input type="date" id="raiseDate">
+        </div>
+        <button type="button" class="btn" id="dlRaise">Download</button>
+      </div>
+      <p class="cal-said" id="saidRaise" role="status"></p>
+    </div>
+
+    <div class="cal-card">
+      <h3>A bake day</h3>
+      <p class="note">The build the night before at 9:30&nbsp;pm, peak and skim at 8:00&nbsp;am, then mix, folds, shape, preheat and bake — timed to come out of the oven around 4&nbsp;pm.</p>
+      <div class="cal-row">
+        <div class="field">
+          <label for="bakeDate">Baking on</label>
+          <input type="date" id="bakeDate">
+        </div>
+        <button type="button" class="btn" id="dlBake">Download</button>
+      </div>
+      <p class="cal-said" id="saidBake" role="status"></p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p class="kick">On a phone</p>
+    <p class="note">The file lands in Downloads or Files rather than opening straight into the calendar — tap it there and your phone will offer to add the events. The feeds are a guess at your kitchen, not a law: if the jar is running ahead or behind, move the events. Deleting the series is one long-press on any of them.</p>
+  </div>
+</section>
+
 <!-- ================= NOTES ================= -->
 <section>
   <p class="kick">For your grain bins</p>
@@ -535,6 +596,242 @@ Corrections welcome — <a href="mailto:{{ site.author.email }}">{{ site.author.
         document.getElementById('view-pj').hidden = (view !== 'pj');
         document.getElementById('view-plain').hidden = (view !== 'plain');
       });
+    });
+  })();
+</script>
+
+<script>
+  // Builds an .ics in the browser. No network, no storage — the file is made
+  // from the numbers on this page and handed straight to the download.
+  (function () {
+    var AM = [8, 0];        // morning feed
+    var PM = [21, 30];      // evening feed — the same slot the build uses on a bake day
+    var EVENING_FROM = 5;   // twice daily from day 5
+
+    var PJ = [
+      ['15 g whole rye + 30 g pineapple juice',
+       'Unsweetened, 100% juice: no added sugar, no sodium benzoate. A thin batter is correct. Loose lid, warm spot at 75-80 F, no discard.'],
+      ['Add 15 g rye + 30 g juice, no discard',
+       'The dramatic false rise does not arrive. That is the method working, not failing.'],
+      ['Add 15 g rye + 30 g juice, no discard',
+       'About 135 g in the jar now. In a warm kitchen the first real yeast activity often shows today: fine even bubbles, a smell turning from fruity to yeasty.'],
+      ['Keep 55 g, + 30 g flour + 30 g water',
+       'Juice stops here. Unchlorinated water from now on: the culture makes its own acid, and more juice holds the yeast back rather than helping it.'],
+      ['Keep 55 g, + 30 g flour + 30 g water',
+       'Twice daily from today. Once you see a clear rise and fall between feeds, start cutting white flour into the rye.'],
+      ['1:2:2 - 20 g starter + 40 g flour + 40 g water',
+       'Mark the level at every feed. The shortening of the doubling time is the signal, more than the height.'],
+      ['1:2:2 - 20 g starter + 40 g flour + 40 g water',
+       'Two consecutive predictable doublings in 4-8 h and it will raise bread.'],
+      ['1:2:2 - ready when it doubles in 4-8 h',
+       'A smell like yogurt and green apple. If it is there you can bake; if not, keep feeding - a cold kitchen doubles everything.']
+    ];
+
+    var PLAIN = [
+      ['50 g whole rye + 50 g water at 80 F',
+       'Mix to a thick paste, scrape down the sides, cover loosely. Mark the level with a rubber band. Nothing will happen and that is correct.'],
+      ['Keep 50 g, + 50 g rye + 50 g water',
+       'You may get a dramatic rise and a smell like gym socks or parmesan. That is leuconostoc, not yeast, and it is about to die off. Feed anyway.'],
+      ['Keep 50 g, + 50 g rye + 50 g water',
+       'The dead zone. Flat, quiet, maybe a whiff of acetone. Almost everyone throws their starter out here. Do not.'],
+      ['Keep 50 g, + 25 g rye + 25 g white + 50 g water',
+       'Start cutting in white flour. Small bubbles return and the smell turns sour rather than foul.'],
+      ['Keep 30 g, + 30 g flour + 30 g water',
+       'Twice daily from today, morning and evening.'],
+      ['Keep 30 g, + 30 g flour + 30 g water',
+       'Rise time between feeds should shorten noticeably from one day to the next.'],
+      ['1:2:2 - 20 g starter + 40 g flour + 40 g water',
+       'Seven days is the optimistic case. Ten to fourteen is common.'],
+      ['1:2:2 - 20 g starter + 40 g flour + 40 g water',
+       'Keep going. Two consecutive predictable doublings is the bar, not a calendar date.'],
+      ['1:2:2 - 20 g starter + 40 g flour + 40 g water',
+       'If it is doubling in 4-8 h with a yogurt-and-green-apple smell, it is ready.'],
+      ['1:2:2 - ready when it doubles in 4-8 h',
+       'Still sluggish on day ten? Warmth is almost always the answer: 75-80 F, and a little rye in every feed.']
+    ];
+
+    var BAKE = [
+      [-1, 21, 30, 'Levain: build for tomorrow',
+       '10 g mother + 57 g flour + 57 g water = 124 g. Clean jar, loose lid, room temperature. Warm kitchen above 75 F: use 5 g of mother instead, or build at 11pm.'],
+      [0, 8, 0, 'Levain at peak: skim the mother first',
+       'Domed and webbed with bubbles, just before it sinks back. Take 20 g into the clean fridge jar - that is next week mother. The remaining ~100 g goes in the dough.'],
+      [0, 8, 30, 'Mix the dough',
+       '435 g flour, 315 g water at 27 C, 100 g ripe levain, 10 g fine sea salt. 860 g of dough, about 750 g baked, 75% hydration.'],
+      [0, 9, 0, 'Folds: four sets, 30 minutes apart',
+       'Through the first two hours of bulk. After the fourth set, leave it alone.'],
+      [0, 13, 30, 'Bulk done: shape',
+       'About 5 h at 74-78 F. Read the dough, not the clock: domed, jiggly, 50-70% risen. Shape and bench rest.'],
+      [0, 14, 30, 'Preheat, oven and pot',
+       'Up to 250 C with the pot inside. Give it a full hour.'],
+      [0, 15, 20, 'Bake',
+       '20 minutes covered at 250 C, then 20-25 minutes uncovered at 230 C.'],
+      [0, 16, 5, 'Out of the oven: cool before slicing',
+       'At least 2 h on a rack. Cutting hot bread gums the crumb - slice from about 6:15pm.']
+    ];
+
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+    function local(d, h, m, plus) {
+      var t = new Date(d.getFullYear(), d.getMonth(), d.getDate(), h, m + (plus || 0), 0, 0);
+      return t.getFullYear() + pad(t.getMonth() + 1) + pad(t.getDate()) +
+             'T' + pad(t.getHours()) + pad(t.getMinutes()) + '00';
+    }
+
+    function utcNow() {
+      var d = new Date();
+      return d.getUTCFullYear() + pad(d.getUTCMonth() + 1) + pad(d.getUTCDate()) + 'T' +
+             pad(d.getUTCHours()) + pad(d.getUTCMinutes()) + pad(d.getUTCSeconds()) + 'Z';
+    }
+
+    function shift(date, days) {
+      var d = new Date(date.getTime());
+      d.setDate(d.getDate() + days);
+      return d;
+    }
+
+    // yyyy-mm-dd from the date input, read as a local date rather than UTC
+    function parseDate(value) {
+      var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value || '');
+      if (!m) return null;
+      return new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+    }
+
+    function esc(t) {
+      return String(t).replace(/\\/g, '\\\\').replace(/;/g, '\\;')
+                      .replace(/,/g, '\\,').replace(/\n/g, '\\n');
+    }
+
+    // RFC 5545 wants lines folded; a leading space continues the one before.
+    function fold(line) {
+      var out = '', i = 0;
+      while (line.length - i > 70) { out += line.substr(i, 70) + '\r\n '; i += 70; }
+      return out + line.substr(i);
+    }
+
+    function vevent(o) {
+      var l = [
+        'BEGIN:VEVENT',
+        'UID:' + o.uid,
+        'DTSTAMP:' + utcNow(),
+        'DTSTART:' + o.start,
+        'DTEND:' + o.end,
+        'SUMMARY:' + esc(o.summary),
+        'DESCRIPTION:' + esc(o.description)
+      ];
+      if (o.rrule) l.push('RRULE:' + o.rrule);
+      l.push('BEGIN:VALARM', 'ACTION:DISPLAY', 'TRIGGER:PT0S',
+             'DESCRIPTION:' + esc(o.summary), 'END:VALARM', 'END:VEVENT');
+      return l.map(fold).join('\r\n');
+    }
+
+    function calendar(name, events) {
+      return ['BEGIN:VCALENDAR', 'VERSION:2.0',
+              'PRODID:-//lpezet.github.io//levain starter card//EN',
+              'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+              'X-WR-CALNAME:' + esc(name)]
+             .map(fold).join('\r\n') + '\r\n' +
+             events.join('\r\n') + '\r\nEND:VCALENDAR\r\n';
+    }
+
+    function download(text, filename, said, count) {
+      try {
+        var blob = new Blob([text], { type: 'text/calendar;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+        said.textContent = count + ' reminders in ' + filename + ' - open it to add them.';
+      } catch (e) {
+        said.textContent = 'Your browser blocked the download. Try it from a desktop browser.';
+      }
+    }
+
+    // ---- the raise: a feed a day, twice daily from day 5, then the mother
+    function raiseIcs(day1, plain) {
+      var table = plain ? PLAIN : PJ;
+      var tag = plain ? 'plain water' : 'pineapple juice';
+      var key = (plain ? 'p' : 'j') + local(day1, 0, 0);
+      var out = [];
+
+      for (var i = 0; i < table.length; i++) {
+        var when = shift(day1, i);
+        var n = i + 1;
+        out.push(vevent({
+          uid: 'levain-raise-' + n + '-' + key + '@lpezet.github.io',
+          start: local(when, AM[0], AM[1]),
+          end: local(when, AM[0], AM[1], 15),
+          summary: 'Levain day ' + n + ': ' + table[i][0],
+          description: table[i][1] + '\n\nFrom the ' + tag + ' schedule on lpezet.github.io/breads/levain/'
+        }));
+        if (n >= EVENING_FROM) {
+          out.push(vevent({
+            uid: 'levain-raise-' + n + '-pm-' + key + '@lpezet.github.io',
+            start: local(when, PM[0], PM[1]),
+            end: local(when, PM[0], PM[1], 15),
+            summary: 'Levain day ' + n + ', evening feed: ' + table[i][0],
+            description: 'The second feed of the day. This is the same slot the build uses on a bake day.'
+          }));
+        }
+      }
+
+      var mother = shift(day1, table.length + 6);
+      out.push(vevent({
+        uid: 'levain-mother-' + key + '@lpezet.github.io',
+        start: local(mother, PM[0], PM[1]),
+        end: local(mother, PM[0], PM[1], 15),
+        summary: 'Levain: feed the mother',
+        description: 'Skip it on any week you baked - the build refreshes it. Otherwise 20 g mother + 40 g flour + 40 g water, back in the fridge once it is active. After a long sleep, two feeds at 1:2:2 before you trust it to raise a loaf. Hooch on top is not death: pour it off and feed.',
+        rrule: 'FREQ=WEEKLY;COUNT=52'
+      }));
+
+      return { text: calendar('Levain - the raise', out), count: out.length };
+    }
+
+    // ---- one bake day, back-timed from bread out of the oven at 4pm
+    function bakeIcs(day) {
+      var key = local(day, 0, 0);
+      var out = BAKE.map(function (e, i) {
+        var when = shift(day, e[0]);
+        return vevent({
+          uid: 'levain-bake-' + i + '-' + key + '@lpezet.github.io',
+          start: local(when, e[1], e[2]),
+          end: local(when, e[1], e[2], i === 3 ? 90 : 20),
+          summary: e[3],
+          description: e[4]
+        });
+      });
+      return { text: calendar('Levain - bake day', out), count: out.length };
+    }
+
+    function iso(d) {
+      return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+    }
+
+    var raiseDate = document.getElementById('raiseDate');
+    var bakeDate = document.getElementById('bakeDate');
+    var today = new Date();
+    raiseDate.value = iso(shift(today, 1));
+    bakeDate.value = iso(shift(today, 10));
+
+    document.getElementById('dlRaise').addEventListener('click', function () {
+      var said = document.getElementById('saidRaise');
+      var d = parseDate(raiseDate.value);
+      if (!d) { said.textContent = 'Pick a date for day one first.'; return; }
+      var plain = document.getElementById('view-plain').hidden === false;
+      var ics = raiseIcs(d, plain);
+      download(ics.text, 'levain-raise-' + iso(d) + '.ics', said, ics.count);
+    });
+
+    document.getElementById('dlBake').addEventListener('click', function () {
+      var said = document.getElementById('saidBake');
+      var d = parseDate(bakeDate.value);
+      if (!d) { said.textContent = 'Pick the day you are baking first.'; return; }
+      var ics = bakeIcs(d);
+      download(ics.text, 'levain-bake-day-' + iso(d) + '.ics', said, ics.count);
     });
   })();
 </script>
