@@ -63,7 +63,8 @@ description: >-
   .sub{color:var(--ink-soft);font-size:1.02rem;margin:0 0 6px}
   .meta{color:var(--ink-soft);font-size:.82rem;font-family:ui-sans-serif,system-ui,sans-serif;
         text-transform:uppercase;letter-spacing:.09em;margin:0 0 34px}
-  h2{font-size:1.28rem;margin:52px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--rule);letter-spacing:-.01em}
+  h2{font-size:1.28rem;margin:52px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--rule);
+     letter-spacing:-.01em;scroll-margin-top:16px}
   h3{font-size:1.05rem;margin:26px 0 8px}
   p{margin:0 0 14px}
   a{color:var(--accent)}
@@ -116,6 +117,22 @@ description: >-
   ul,ol{margin:0 0 14px;padding-left:22px}
   li{margin-bottom:6px}
   .steps{font-size:.94rem}
+
+  /* --- contents --- */
+  .toc{background:var(--card);border:1px solid var(--rule);border-radius:10px;
+       padding:16px 20px 14px;margin:22px 0 8px;font-family:ui-sans-serif,system-ui,sans-serif}
+  .toc-h{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+         color:var(--ink-soft);margin:0 0 8px}
+  .toc-list{list-style:none;margin:0;padding:0;
+            display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0 28px}
+  .toc-list li{display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+               margin:0;padding:5px 0;border-bottom:1px dotted var(--rule-soft);font-size:.9rem}
+  .toc-list a{text-decoration:none}
+  .toc-list a:hover{text-decoration:underline}
+  .toc-n{color:var(--ink-soft);font-size:.76rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .toc-more{margin:13px 0 0;padding-top:12px;border-top:1px solid var(--rule);
+            font-size:.88rem;color:var(--ink-soft)}
+  .toc-more .arrow{color:var(--accent);font-weight:700;padding-left:4px}
 
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:16px 0 22px}
   .pick{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px 16px}
@@ -172,7 +189,19 @@ description: >-
 <p style="margin-bottom:0"><b>One big thing in your favour:</b> khorasan is not merely "like" emmer. <i>Triticum turgidum</i> ssp. <i>turanicum</i> and <i>T. turgidum</i> ssp. <i>dicoccum</i> are two subspecies of the same tetraploid species, so the grain chemistry is genuinely close and most of the ancient breads here are emmer breads. The <i>dough</i> is not identical, though — khorasan is higher-protein and stronger than emmer, and free-threshing where emmer is hulled. Same species predicts the genome, not the handling.</p>
 </div>
 
-<h2>The conversion table</h2>
+<nav class="toc" aria-label="Contents">
+<p class="toc-h">Contents</p>
+<ul class="toc-list">
+<li><a href="#conversion-table">The conversion table</a> <span class="toc-n">grain swaps</span></li>
+<li><a href="#where-to-start">Where to start</a> <span class="toc-n">4 picks</span></li>
+{% for section in site.data.breads.sections %}<li><a href="#{{ section.title | slugify }}">{{ section.title }}</a> <span class="toc-n">{{ section.recipes.size }} {% if section.recipes.size == 1 %}bread{% else %}breads{% endif %}</span></li>
+{% endfor %}<li><a href="#not-bread">Not bread after all</a> <span class="toc-n">3 corrections</span></li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+<p class="toc-more">Every formula here runs on Lev'bl&eacute;. For the live-culture route — raising a wild starter on rye, keeping it on a small ration, and the numbers for a 750&nbsp;g loaf — see the <a href="{{ '/breads/levain/' | relative_url }}">levain starter card</a><span class="arrow">&#8599;</span></p>
+</nav>
+
+<h2 id="conversion-table">The conversion table</h2>
 
 <table>
 <thead><tr><th style="width:24%">They used</th><th style="width:26%">You use</th><th>How close, and what shifts</th></tr></thead>
@@ -193,7 +222,7 @@ description: >-
 
 <div class="warn"><b>The einkorn rule, since it runs through everything here.</b> One HMW-glutenin locus, no <i>Glu-D1</i>, and gliadin running up to 12× glutenin. Farinograph work on <i>landrace</i> einkorn puts stability under 1.5 minutes against 4+ for common wheat — though note that bred elite lines (ID331, Monlis) test far better and can even beat a bread-wheat control on loaf volume, so this is a property of the einkorn you're likely to have, not of the species. Practically: mix briefly, don't develop it, don't give it a long final proof, keep hydration <b>5–10 points under</b> what you'd use for T65, and use Lev'blé rather than baker's yeast wherever you have the choice — fresh sourdough measurably softens einkorn crumb while doing little for common wheat. Einkorn is the one grain here where your leaven is doing structural work, not just flavour.</div>
 
-<h2>Where to start</h2>
+<h2 id="where-to-start">Where to start</h2>
 <div class="grid">
 <div class="pick"><b>Küllüoba loaf</b><span>Your khorasan is a sibling subspecies of the actual grain. Closest you'll get to a real Bronze Age bake in one afternoon.</span></div>
 <div class="pick"><b>Siyez ekmeği</b><span>100% einkorn, with Lev'blé. This is the direct answer to the question you asked first.</span></div>
@@ -205,7 +234,7 @@ description: >-
 
 {% assign n = 0 %}
 {% for section in site.data.breads.sections %}
-<h2>{{ section.title }}</h2>
+<h2 id="{{ section.title | slugify }}">{{ section.title }}</h2>
 
 {% for r in section.recipes %}
 {% assign n = n | plus: 1 %}
@@ -260,7 +289,7 @@ description: >-
 
 <hr>
 
-<h2>A few things that turned out not to be bread</h2>
+<h2 id="not-bread">A few things that turned out not to be bread</h2>
 <p>Worth knowing, because recipes for all three circulate:</p>
 <ul>
 <li><b>Stillfried "ring breads"</b> (Lower Austria, ~960–900 BC). Three annular objects about 3 cm across, barley and a glume wheat. 66–70% micropores and non-gelatinised starch: they were <b>shaped from wet cereal and air-dried without ever being baked</b>, and they imitate the clay loom-weight rings found in the same pit. Any recipe that bakes them is inventing.</li>
@@ -268,7 +297,7 @@ description: >-
 <li><b>The Ipweg "galette"</b> (Germany, c. 713 BC). A 15 cm oval that is <b>primarily beeswax</b> with traces of spelt, barley and millet — a substitute bread made as an offering. Some breads were never food.</li>
 </ul>
 
-<h2>Sources</h2>
+<h2 id="sources">Sources</h2>
 <ul class="srcs">
 <li><a href="https://www.pnas.org/doi/10.1073/pnas.1801071115">Arranz-Otaegui et al. 2018, <i>PNAS</i> — Shubayqa 1</a> · <a href="https://www.nbcnews.com/science/science-news/world-s-oldest-bread-found-prehistoric-site-jordan-n891921">excavators on the taste</a> · <a href="https://link.springer.com/article/10.1007/s00334-008-0162-x">Wollstonecroft et al. 2008 — club-rush tuber processing</a></li>
 <li><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0182401">Heiss et al. 2017, <i>PLOS ONE</i> — Parkhaus Opéra galettes</a> · <a href="https://exarc.net/issue-2023-2/ea/experimental-approach-tannur-ovens">EXARC 2023 — tannur oven temperatures</a></li>
