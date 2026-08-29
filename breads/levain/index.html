@@ -1,0 +1,559 @@
+---
+permalink: /breads/levain/
+title: Levain Starter Card
+description: >-
+  Raising a wild starter from rye and water, keeping it alive on a small
+  ration, and the numbers for a 750 g loaf that never touches the mother jar.
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Levain Starter Card — raising and keeping a wild starter · {{ site.title }}</title>
+<meta name="description" content="{{ page.description | strip_newlines | strip }}">
+<meta name="author" content="{{ site.author.name }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127838;</text></svg>">
+<script>
+  // Same theme choice as the rest of the site, set before first paint.
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+<style>
+  /* Same tokens as /breads/ — this page is its sibling, not its own thing. */
+  :root{
+    --ink:#241f1a; --ink-soft:#5c5148; --rule:#ddd2c4; --rule-soft:#ebe3d7;
+    --paper:#faf7f1; --card:#fffdf9;
+    --hist:#7a5c2e; --hist-bg:#f6efe0;
+    --now:#2f5d4f;  --now-bg:#e9f2ed;
+    --warn:#8a3d2a; --warn-bg:#f8eae5;
+    --accent:#a8571f;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#ece5da; --ink-soft:#a89c8d; --rule:#3d372f; --rule-soft:#302b25;
+      --paper:#191714; --card:#211e1a;
+      --hist:#d8b878; --hist-bg:#2a2418;
+      --now:#8fc9b2;  --now-bg:#18261f;
+      --warn:#e8a58e; --warn-bg:#2c1c16;
+      --accent:#e0955a;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#ece5da; --ink-soft:#a89c8d; --rule:#3d372f; --rule-soft:#302b25;
+    --paper:#191714; --card:#211e1a;
+    --hist:#d8b878; --hist-bg:#2a2418;
+    --now:#8fc9b2;  --now-bg:#18261f;
+    --warn:#e8a58e; --warn-bg:#2c1c16;
+    --accent:#e0955a;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font:16px/1.65 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:48px 24px 90px}
+  h1{font-size:2.1rem;line-height:1.15;margin:0 0 6px;letter-spacing:-.02em}
+  .sub{color:var(--ink-soft);font-size:1.02rem;margin:0 0 6px}
+  .meta{color:var(--ink-soft);font-size:.82rem;font-family:ui-sans-serif,system-ui,sans-serif;
+        text-transform:uppercase;letter-spacing:.09em;margin:0 0 34px}
+  h2{font-size:1.28rem;margin:8px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--rule);letter-spacing:-.01em}
+  h3{font-size:1.05rem;margin:26px 0 8px}
+  p{margin:0 0 14px}
+  a{color:var(--accent)}
+  small{color:var(--ink-soft)}
+
+  .lede{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:20px 22px;margin:0 0 12px}
+  .lede p:last-child{margin-bottom:0}
+
+  section{margin:44px 0 0}
+  .kick{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.7rem;font-weight:700;
+        letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+  .note{color:var(--ink-soft);font-size:.93rem}
+  .mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
+
+  /* ---- panel: the calculator ---- */
+  .panel{background:var(--card);border:1px solid var(--rule);border-radius:12px;overflow:hidden;margin:0 0 8px}
+  .controls{display:flex;flex-wrap:wrap;gap:16px 26px;padding:14px 18px;
+            background:var(--rule-soft);border-bottom:1px solid var(--rule)}
+  .field{display:flex;flex-direction:column;gap:6px;flex:1 1 210px}
+  .field label{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.72rem;font-weight:600;
+               letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);
+               display:flex;justify-content:space-between;gap:16px}
+  .field label span{color:var(--accent);font-variant-numeric:tabular-nums}
+  input[type="range"]{width:100%;accent-color:var(--accent);margin:0;height:22px}
+  input[type="range"]:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .panel-body{padding:16px 20px 18px}
+
+  table{width:100%;border-collapse:collapse;margin:0 0 12px;font-size:.9rem;
+        font-family:ui-sans-serif,system-ui,sans-serif}
+  th,td{text-align:left;padding:9px 10px 9px 0;border-bottom:1px solid var(--rule-soft);vertical-align:baseline}
+  th{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-soft);
+     border-bottom:1.5px solid var(--rule);font-weight:600;white-space:nowrap}
+  tbody tr:last-child td{border-bottom:none}
+  td.num,th.num{text-align:right;padding-right:0}
+  .num{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .pct{color:var(--ink-soft)}
+  tfoot td{border-top:1.5px solid var(--rule);border-bottom:none;font-weight:700}
+  .scroll{overflow-x:auto}
+
+  /* ---- toggles ---- */
+  .switch{display:inline-flex;border:1px solid var(--rule);border-radius:99px;overflow:hidden;background:var(--card)}
+  .opt{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.74rem;font-weight:600;
+       letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border:0;background:transparent;
+       color:var(--ink-soft);cursor:pointer}
+  .opt+.opt{border-left:1px solid var(--rule)}
+  .opt:hover{color:var(--ink)}
+  .opt.is-on{background:var(--accent);color:var(--card)}
+  .opt:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  #mode-switch{flex:0 0 100%}
+
+  /* ---- the build: a rail of steps ---- */
+  .loop{margin:6px 0 18px}
+  .step{position:relative;border-left:2px solid var(--rule);padding:12px 0 12px 18px}
+  .step::before{content:"";position:absolute;left:-5px;top:19px;width:8px;height:8px;
+                border-radius:50%;background:var(--accent)}
+  .step:last-child::before{background:var(--now)}
+  .step h3{margin:0 0 3px;font-size:1rem}
+  .step p{margin:0;font-size:.95rem;color:var(--ink-soft)}
+
+  /* ---- day schedules ---- */
+  .days{margin:14px 0 0}
+  .day{display:grid;grid-template-columns:4.6rem 1fr;gap:0 16px;padding:14px 0;border-top:1px solid var(--rule-soft)}
+  .day:first-child{border-top:none;padding-top:4px}
+  .day-mark{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.74rem;font-weight:600;
+            letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding-top:4px}
+  .feed{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.82rem;
+        background:var(--card);border:1px solid var(--rule-soft);border-left:3px solid var(--accent);
+        border-radius:0 8px 8px 0;padding:6px 11px;margin:0 0 6px;display:inline-block;max-width:100%}
+  .day.ready .feed{border-left-color:var(--now)}
+  .day-note{color:var(--ink-soft);font-size:.94rem}
+
+  .tag{display:inline-block;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.68rem;
+       font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:4px;
+       color:var(--hist);background:var(--hist-bg);margin:0 7px 0 0;vertical-align:1px}
+  .tag.go{color:var(--now);background:var(--now-bg)}
+
+  .callout{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--accent);
+           border-radius:0 10px 10px 0;padding:14px 16px;margin:14px 0 0}
+  .callout .kick{color:var(--ink-soft)}
+  .callout p:last-child{margin-bottom:0}
+
+  ul,ol{margin:0 0 14px;padding-left:22px}
+  li{margin-bottom:8px}
+  .foot{margin-top:34px;padding-top:16px;border-top:1px solid var(--rule);
+        color:var(--ink-soft);font-size:.85rem;font-family:ui-sans-serif,system-ui,sans-serif}
+
+  /* --- site chrome: a thin bar back to the rest of the site --- */
+  .sitebar{border-bottom:1px solid var(--rule);background:var(--card)}
+  .sitebar-inner{max-width:820px;margin:0 auto;padding:12px 24px;
+                 display:flex;align-items:center;justify-content:space-between;gap:16px;
+                 font-family:ui-sans-serif,system-ui,sans-serif;font-size:.86rem}
+  .sitebar a{color:var(--ink-soft);text-decoration:none}
+  .sitebar a:hover{color:var(--accent)}
+  .sitebar .mark{color:var(--accent);font-family:ui-monospace,Menlo,Consolas,monospace}
+  .sitebar-nav{display:flex;align-items:center;gap:14px}
+  .theme-toggle{appearance:none;background:none;border:1px solid var(--rule);border-radius:99px;
+                color:var(--ink-soft);cursor:pointer;font:inherit;font-size:.78rem;padding:3px 11px}
+  .theme-toggle:hover{color:var(--accent);border-color:var(--accent)}
+  .backlink{margin-top:46px;padding-top:18px;border-top:1px solid var(--rule);
+            font-family:ui-sans-serif,system-ui,sans-serif;font-size:.84rem;color:var(--ink-soft)}
+
+  @media (max-width:480px){
+    .day{grid-template-columns:1fr;gap:6px}
+  }
+  @media print{
+    body{background:#fff}
+    .sitebar,.backlink,.controls,.switch{display:none}
+    .wrap{max-width:none;padding:0}
+    .panel,.callout,.day{break-inside:avoid;page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="sitebar">
+  <div class="sitebar-inner">
+    <a href="{{ '/' | relative_url }}"><span class="mark">~/</span>{{ site.title }}</a>
+    <span class="sitebar-nav">
+      <a href="{{ '/breads/' | relative_url }}">&#8592; Ancient Breads</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle colour theme">theme</button>
+    </span>
+  </div>
+</div>
+
+<div class="wrap">
+
+<h1>Levain Starter Card</h1>
+<p class="sub">Raising a wild starter from rye and water, keeping it alive on a small ration, and the numbers for a 750&nbsp;g loaf that never touches the mother jar.</p>
+<p class="meta">The loaf · The build · From scratch · Where it gets adjusted</p>
+
+<div class="lede">
+<p><b>Why this page exists.</b> Every formula over on <a href="{{ '/breads/' | relative_url }}">Ancient Breads</a> leans on Lev'blé, which is deactivated sourdough plus selected baker's yeast — flavour without the biology. This is the other route: a live culture you raise yourself, on the same grain bins, with the numbers worked out for a modern hearth loaf.</p>
+<p style="margin-bottom:0">The one rule that makes it sustainable: <b>the jar in the fridge never goes in the bread.</b> It is seed stock. You spend a spoonful of it, grow that spoonful into what the loaf needs, and skim next week's mother off the top before the rest hits the mixing bowl.</p>
+</div>
+
+<!-- ================= THE LOAF ================= -->
+<section>
+  <p class="kick">The loaf</p>
+  <h2>750 g baked, one levain build</h2>
+  <p>A hearth loaf loses about 13% of its weight to steam in the oven, so a 750&nbsp;g finished loaf starts as roughly 860&nbsp;g of dough. Drag the sliders to re-scale — percentages are on total flour, counting the flour inside the levain.</p>
+
+  <div class="panel">
+    <div class="controls">
+      <div class="switch" id="mode-switch" role="group" aria-label="Scale by">
+        <button type="button" class="opt is-on" data-mode="baked" aria-pressed="true">Baked weight</button>
+        <button type="button" class="opt" data-mode="flour" aria-pressed="false">Flour weight</button>
+      </div>
+      <div class="field" id="field-baked">
+        <label for="target">Baked weight <span><output id="targetOut">750</output> g</span></label>
+        <input type="range" id="target" min="400" max="1400" step="10" value="750">
+      </div>
+      <div class="field" id="field-flour" hidden>
+        <label for="flourIn">Total flour <span><output id="flourOut">750</output> g</span></label>
+        <input type="range" id="flourIn" min="200" max="1200" step="10" value="750">
+      </div>
+      <div class="field">
+        <label for="hydra">Hydration <span><output id="hydraOut">75</output>%</span></label>
+        <input type="range" id="hydra" min="60" max="90" step="1" value="75">
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Ingredient</th>
+              <th class="num">Weight</th>
+              <th class="num">Baker&rsquo;s&nbsp;%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Flour <small>— your Bise T80 / Blanche T65 blend, or bread flour</small></td>
+              <td class="num" id="oFlour">435 g</td>
+              <td class="num pct" id="pFlour">90%</td>
+            </tr>
+            <tr>
+              <td>Water <small>— 80&nbsp;°F / 27&nbsp;°C</small></td>
+              <td class="num" id="oWater">315 g</td>
+              <td class="num pct" id="pWater">65%</td>
+            </tr>
+            <tr>
+              <td>Levain, ripe <small>— 100% hydration, at peak</small></td>
+              <td class="num" id="oLevain">100 g</td>
+              <td class="num pct" id="pLevain">21%</td>
+            </tr>
+            <tr>
+              <td>Fine sea salt</td>
+              <td class="num" id="oSalt">10 g</td>
+              <td class="num pct" id="pSalt">2.1%</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Total dough</td>
+              <td class="num" id="oTotal">860 g</td>
+              <td class="num pct" id="pHydra">75% hyd.</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <p class="note mono" id="summary">Total flour 485 g &middot; dough 860 g &middot; baked ≈ 750 g &middot; build 125 g of levain</p>
+      <p class="note" style="margin-bottom:0">Bulk 4–6 h at 74–78&nbsp;°F with four sets of folds in the first two hours, shape, then either 1–2 h at room temperature or overnight in the fridge. Read the dough, not the clock — a levain keeps its own schedule.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THE BUILD ================= -->
+<section>
+  <p class="kick">The build</p>
+  <h2>Spending 10 g to get 100 g</h2>
+  <p>The trick to never running out is that the jar in the fridge is not what goes in the bread. It is seed stock. Each bake you spend a spoonful of it, grow that spoonful into what the loaf needs, and skim the new mother off the top before the rest goes into the dough.</p>
+
+  <div class="loop">
+    <div class="step">
+      <h3>Night before &mdash; build</h3>
+      <p><span class="mono">10 g mother + 57 g flour + 57 g water = 124 g.</span> Clean jar, room temperature, loose lid. Ready in 8–12 h at 70&nbsp;°F, faster if warmer.</p>
+    </div>
+    <div class="step">
+      <h3>At peak &mdash; skim the mother first</h3>
+      <p>Domed, webbed with bubbles, just before it sinks back. Take <span class="mono">20 g</span> off into the clean fridge jar. That is next week&rsquo;s mother, and it never had to survive the mixing bowl.</p>
+    </div>
+    <div class="step">
+      <h3>Then &mdash; mix</h3>
+      <p>The remaining <span class="mono">~100 g</span> goes into the dough. A few grams cling to the jar; that is what the extra 4&nbsp;g of build is for.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p class="kick">Keeping the mother between bakes</p>
+    <p class="note">A 20&nbsp;g mother in the fridge holds two to three weeks without attention. If you bake weekly you barely need to feed it at all — each build refreshes it. After a long sleep, give it two room-temperature feeds at <span class="mono">1:2:2</span> before you trust it to raise a loaf. Grey liquid on top is hooch, not death: pour it off and feed.</p>
+  </div>
+</section>
+
+<!-- ================= FROM SCRATCH ================= -->
+<section>
+  <p class="kick">From scratch</p>
+  <h2>Skipping the dead zone</h2>
+  <p>Start on whole rye. It carries the most wild yeast and the most enzyme activity of anything in your grain bins, and freshly milled from your own berries it is about as fast a start as exists. Keep the jar at 75–80&nbsp;°F — temperature, not technique, is what usually stalls a new starter.</p>
+  <p>Debra Wink&rsquo;s pineapple juice method drops the pH to about 4.0 on day one. That single change suppresses <em>Leuconostoc mesenteroides</em>, the bacterium responsible for the day-two false rise and the day-three stall, so the yeast comes up on day 3–4 instead of day 7.</p>
+
+  <div class="switch" id="sched-switch" role="group" aria-label="Starter method">
+    <button type="button" class="opt is-on" data-view="pj" aria-pressed="true">Pineapple juice</button>
+    <button type="button" class="opt" data-view="plain" aria-pressed="false">Plain water</button>
+  </div>
+
+  <div class="days" id="view-pj">
+    <div class="day">
+      <div class="day-mark">Day 1</div>
+      <div class="day-body">
+        <div class="feed">15 g whole rye + 30 g pineapple juice</div>
+        <div class="day-note">Unsweetened, 100% juice — no added sugar, no sodium benzoate. It will look like a thin batter, which is correct. Loose lid, warm spot, no discard.</div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-mark">Day 2</div>
+      <div class="day-body">
+        <div class="feed">add 15 g rye + 30 g juice &middot; no discard</div>
+        <div class="day-note">The dramatic false rise does not arrive. That is the method working, not failing — there is genuinely nothing to see here.</div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-mark">Day 3</div>
+      <div class="day-body">
+        <div class="feed">add 15 g rye + 30 g juice &middot; no discard</div>
+        <div class="day-note">About 135&nbsp;g in the jar now. In a warm kitchen the first real yeast activity often shows up today: fine even bubbles, a smell turning from fruity to yeasty.</div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-mark">Day 4</div>
+      <div class="day-body">
+        <div class="feed">keep 55 g &middot; + 30 g flour + 30 g water</div>
+        <div class="day-note"><span class="tag">juice stops</span> Switch to unchlorinated water from here. The culture makes its own acid now, and more juice past this point holds the yeast back rather than helping it.</div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-mark">Day 5&ndash;6</div>
+      <div class="day-body">
+        <div class="feed">daily &middot; keep 55 g &middot; + 30 g flour + 30 g water</div>
+        <div class="day-note">Once you see a clear rise and fall between feeds, go to twice daily and start cutting white flour into the rye.</div>
+      </div>
+    </div>
+    <div class="day ready">
+      <div class="day-mark">Day 6&ndash;8</div>
+      <div class="day-body">
+        <div class="feed">1:2:2 twice daily &middot; doubles in 4&ndash;8 h</div>
+        <div class="day-note"><span class="tag go">bake</span> Two consecutive predictable doublings and a smell like yogurt and green apple. Typically two to four days ahead of the plain-water route, almost all of it saved on the stall.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="days" id="view-plain" hidden>
+    <div class="day">
+      <div class="day-mark">Day 1</div>
+      <div class="day-body">
+        <div class="feed">50 g whole rye + 50 g water @ 80 °F</div>
+        <div class="day-note">Mix to a thick paste, scrape down the sides, cover loosely. Mark the level with a rubber band. Nothing will happen and that is correct.</div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-mark">Day 2</div>
+      <div class="day-body">
+        <div class="feed">keep 50 g · + 50 g rye + 50 g water</div>
+        <div class="day-note">You may get a dramatic rise and a smell like gym socks or parmesan. That is <em>leuconostoc</em>, not yeast, and it is about to die off. Feed anyway.</div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-mark">Day 3</div>
+      <div class="day-body">
+        <div class="feed">keep 50 g · + 50 g rye + 50 g water</div>
+        <div class="day-note">The dead zone. Flat, quiet, maybe a whiff of acetone. Almost everyone throws their starter out here. Don&rsquo;t.</div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-mark">Day 4</div>
+      <div class="day-body">
+        <div class="feed">keep 50 g · + 25 g rye + 25 g white + 50 g water</div>
+        <div class="day-note">Start cutting in white flour. Small bubbles return and the smell turns sour rather than foul.</div>
+      </div>
+    </div>
+    <div class="day">
+      <div class="day-mark">Day 5&ndash;6</div>
+      <div class="day-body">
+        <div class="feed">twice daily · keep 30 g · + 30 g flour + 30 g water</div>
+        <div class="day-note">Morning and evening now. Rise time between feeds should shorten noticeably from one day to the next — that shortening is the signal, more than the height.</div>
+      </div>
+    </div>
+    <div class="day ready">
+      <div class="day-mark">Day 7+</div>
+      <div class="day-body">
+        <div class="feed">1:2:2 &middot; ready when it doubles in 4&ndash;8 h</div>
+        <div class="day-note"><span class="tag go">bake</span> Two consecutive predictable doublings and a smell like yogurt and green apple mean it will raise bread. Seven days is the optimistic case; ten to fourteen is common, and a cold kitchen doubles everything.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p class="kick">Reading it</p>
+    <p class="note">Ignore the float test until the starter is established — it fails on perfectly good stiff or rye-heavy levains. The rubber band is the better instrument: mark the level at every feed and watch how long the doubling takes. Use it at peak or just past, never on the way down.</p>
+  </div>
+</section>
+
+<!-- ================= NOTES ================= -->
+<section>
+  <p class="kick">For your grain bins</p>
+  <h2>Where this gets adjusted</h2>
+  <ul>
+    <li><b>Ancient grains ferment fast and collapse fast.</b> Einkorn, khorasan and emmer have weak, extensible gluten and high enzyme activity. Drop hydration 5–10 points against the table above, cut the bulk short, and watch the dough rather than the timer.</li>
+    <li><b>Lentil flour dilutes the gluten further.</b> On the Küllüoba loaf — 450&nbsp;g khorasan and 50&nbsp;g lentil — the 50&nbsp;g of Lev&rsquo;blé becomes roughly 100&nbsp;g of levain, and this is the recipe where a <span class="mono">1 g</span> pinch of instant yeast alongside the levain is worth it: <em>levain mixte</em>, the French tradition allowance of 0.2% of flour weight, enough to guarantee lift without flattening the sourness.</li>
+    <li><b>Enriched doughs need the same help.</b> Oil, honey and eggs slow a levain down badly. The artolaganon is a candidate for the same pinch.</li>
+    <li><b>Altitude changes proofing, not the formula.</b> Above about 4,000&nbsp;ft doughs rise faster and over-proof sooner. Shorten bulk, shape a little tighter, and consider dropping hydration a few points.</li>
+    <li><b>A live levain is also the historically honest choice.</b> Lev&rsquo;blé is deactivated sourdough plus selected baker&rsquo;s yeast — flavour without the biology. Bronze Age Anatolia had the biology and nothing else.</li>
+  </ul>
+
+  <p class="foot">Percentages are on total flour, levain flour included. Bake loss assumed at 13% for a free-standing hearth loaf; a tin loaf or a longer bake will run 1–3 points higher.</p>
+</section>
+
+<p class="backlink">
+Back to <a href="{{ '/breads/' | relative_url }}">Ancient Breads</a>, or to the software at <a href="{{ '/' | relative_url }}">{{ site.title }}</a>.
+Corrections welcome — <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>.
+</p>
+
+</div>
+
+<script>
+  (function () {
+    var LEVAIN_PCT = 0.20;   // ripe levain as % of total flour, 100% hydration
+    var SALT_PCT   = 0.02;
+    var BAKE_YIELD = 0.87;   // baked weight / dough weight
+
+    var target  = document.getElementById('target');
+    var flourIn = document.getElementById('flourIn');
+    var hydra   = document.getElementById('hydra');
+    var mode    = 'baked';
+
+    var out = {
+      target: document.getElementById('targetOut'),
+      hydra:  document.getElementById('hydraOut'),
+      flour:  document.getElementById('oFlour'),
+      water:  document.getElementById('oWater'),
+      levain: document.getElementById('oLevain'),
+      salt:   document.getElementById('oSalt'),
+      total:  document.getElementById('oTotal'),
+      pFlour: document.getElementById('pFlour'),
+      pWater: document.getElementById('pWater'),
+      pLevain: document.getElementById('pLevain'),
+      pSalt: document.getElementById('pSalt'),
+      pHydra: document.getElementById('pHydra'),
+      flourOut: document.getElementById('flourOut'),
+      summary: document.getElementById('summary')
+    };
+
+    function r5(n) { return Math.round(n / 5) * 5; }
+    function c5(n) { return Math.ceil(n / 5) * 5; }
+
+    function render() {
+      var h = Number(hydra.value) / 100;
+      var F;                                   // total flour, levain flour included
+
+      if (mode === 'flour') {
+        F = Number(flourIn.value);
+      } else {
+        F = (Number(target.value) / BAKE_YIELD) / (1 + h + SALT_PCT);
+      }
+
+      var rLevain = c5(LEVAIN_PCT * F);        // 100% hydration: half flour, half water
+      var rFlour  = r5(F - rLevain / 2);
+      var rWater  = r5(h * F - rLevain / 2);
+      var rSalt   = Math.round(SALT_PCT * F);
+
+      // percentages recomputed from the rounded weights, so the table is self-consistent
+      var totFlour = rFlour + rLevain / 2;
+      var totWater = rWater + rLevain / 2;
+
+      out.target.textContent = target.value;
+      out.flourOut.textContent = flourIn.value;
+      out.hydra.textContent = hydra.value;
+
+      out.flour.textContent  = rFlour + ' g';
+      out.water.textContent  = rWater + ' g';
+      out.levain.textContent = rLevain + ' g';
+      out.salt.textContent   = rSalt + ' g';
+      out.total.textContent  = (rFlour + rWater + rLevain + rSalt) + ' g';
+
+      out.pFlour.textContent = Math.round(rFlour / totFlour * 100) + '%';
+      out.pWater.textContent = Math.round(rWater / totFlour * 100) + '%';
+      out.pLevain.textContent = Math.round(rLevain / totFlour * 100) + '%';
+      out.pSalt.textContent = (rSalt / totFlour * 100).toFixed(1) + '%';
+      out.pHydra.textContent = Math.round(totWater / totFlour * 100) + '% hyd.';
+
+      var doughTotal = rFlour + rWater + rLevain + rSalt;
+      var build = c5(rLevain + 25);            // ripe levain needed + 20 g mother + slack
+      out.summary.textContent =
+        'Total flour ' + totFlour + ' g · dough ' + doughTotal + ' g · baked ≈ ' +
+        r5(doughTotal * BAKE_YIELD) + ' g · build ' + build + ' g of levain';
+    }
+
+    target.addEventListener('input', render);
+    flourIn.addEventListener('input', render);
+    hydra.addEventListener('input', render);
+
+    // scale-by toggle
+    var modeOpts = document.querySelectorAll('#mode-switch .opt');
+    Array.prototype.forEach.call(modeOpts, function (btn) {
+      btn.addEventListener('click', function () {
+        mode = btn.getAttribute('data-mode');
+        Array.prototype.forEach.call(modeOpts, function (b) {
+          var on = b === btn;
+          b.classList.toggle('is-on', on);
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        document.getElementById('field-baked').hidden = (mode !== 'baked');
+        document.getElementById('field-flour').hidden = (mode !== 'flour');
+        render();
+      });
+    });
+
+    render();
+
+    // schedule toggle
+    var opts = document.querySelectorAll('#sched-switch .opt');
+    Array.prototype.forEach.call(opts, function (btn) {
+      btn.addEventListener('click', function () {
+        var view = btn.getAttribute('data-view');
+        Array.prototype.forEach.call(opts, function (b) {
+          var on = b === btn;
+          b.classList.toggle('is-on', on);
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        document.getElementById('view-pj').hidden = (view !== 'pj');
+        document.getElementById('view-plain').hidden = (view !== 'plain');
+      });
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var root = document.documentElement;
+      var current = root.getAttribute('data-theme');
+      if (!current) {
+        current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      var next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>

@@ -10,6 +10,7 @@ _data/breads.yml          every recipe on /breads/
 _layouts/default.html     the whole page chrome
 index.html                hero + the loop over _data/projects.yml
 breads/index.html         standalone hobby page, own CSS, no layout
+breads/levain/index.html  the levain starter card, same tokens, no data file
 assets/css/style.css      hand-written CSS, light/dark via custom properties
 assets/images/            screenshots
 ```
@@ -22,6 +23,12 @@ things from the site: the `~/Luke Pezet` bar back to the home page and the
 `localStorage['theme']` key, so the light/dark choice carries across. It's
 linked once from the low-key "Off the clock" section at the bottom of
 `index.html` and is intentionally absent from the nav.
+
+`breads/levain/index.html` is a second standalone page under the same path —
+raising and keeping a wild starter, plus a slider-driven loaf formula. It has no
+data file behind it (nothing on it repeats), and it reuses the `/breads/` custom
+properties verbatim so the two pages read as one section. `/breads/` links to it
+from the Lev'blé row of the conversion table.
 
 The recipes come from `_data/breads.yml`; everything else on that page — the
 conversion table, the "where to start" cards, the closing lists — is plain HTML
