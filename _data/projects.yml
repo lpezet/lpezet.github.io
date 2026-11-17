@@ -8,7 +8,7 @@
 #   tech      list of short tags
 #   links     list of { label, url } — omit entirely for private work
 #   private   true renders the "private" badge and suppresses links
-#   status    optional short badge: "live", "in progress", "archived"
+#   status    optional short badge: "live", "beta", "in progress", "defunct"
 
 groups:
   - id: agents
@@ -146,22 +146,47 @@ groups:
     title: Out in the world
     nav: Shipped
     projects:
-      - name: United File Service
-        tagline: Simple, secure file exchange — small files and big ones.
+      - name: Band Notes
+        tagline: Every Colorado marching band, and how its season is going.
         goal: >-
-          Take file drop with notifications and third-party payment processing
-          all the way to a production-grade serverless service, not a demo. Pay
-          only for what you need.
+          A mobile-first fan site for Colorado marching bands: every band, its
+          shows, its scores, and a leaderboard. Star the ones you care about
+          and their latest result is the first thing you see. The scores come
+          from the recap PDFs the Colorado Bandmasters Association already
+          publishes. Nobody types anything in.
         challenge: >-
-          Serverless is cheap until someone uploads 40GB. Most of the work was
-          in the parts that aren't the feature: upload resumption, cost
-          modeling, and the payment path.
-        tech: [TypeScript, JavaScript, AWS, Serverless]
+          The source is a pile of PDFs, not an API. A Worker watches for new
+          recaps and keeps the raw bytes, Python parses and validates them,
+          and dbt on DuckDB models them into shows, performances and scores.
+          The stages only talk through object storage, so anything after the
+          raw files can be rebuilt. A recap that doesn't parse cleanly gets
+          quarantined and opens a data-quality issue instead of quietly
+          putting a wrong score on someone's kid's band.
+        tech: [TypeScript, Python, dbt, DuckDB, Cloudflare Workers, R2, D1]
         status: live
-        image: /assets/images/unitedfileservice.png
         links:
-          - label: unitedfileservice.com
-            url: https://unitedfileservice.com/
+          - label: bandnotes.app
+            url: https://bandnotes.app/
+
+      - name: MathRules
+        tagline: A math tutor that lets you find your own mistakes.
+        goal: >-
+          A student photographs a problem, or writes one, and then works it on
+          a page with a pen, a finger or a mouse. The tutor reads along and
+          marks things on the same page. It names the rule that was broken and
+          asks a guiding question, and it never gives the answer. Voice is
+          optional. It started with derivatives and is invite-only for now.
+        challenge: >-
+          A language model is a confident grader and an unreliable one. So the
+          model doesn't decide whether a step is right. Each line goes to a
+          SymPy step checker, and the model's job is to explain what the
+          checker found, in a way that leaves the student something to work
+          out.
+        tech: [TypeScript, Python, SymPy, FastAPI, Claude API, Canvas]
+        status: beta
+        links:
+          - label: mathrules.app
+            url: https://mathrules.app/
 
   - id: tools
     title: Tools and libraries
@@ -318,6 +343,21 @@ groups:
     blurb: >-
       Older, and still the ones that come up.
     projects:
+      - name: United File Service
+        tagline: Simple, secure file exchange — small files and big ones.
+        goal: >-
+          Take file drop with notifications and third-party payment processing
+          all the way to a production-grade serverless service, not a demo. Pay
+          only for what you need. It ran in production and has since been shut
+          down.
+        challenge: >-
+          Serverless is cheap until someone uploads 40GB. Most of the work was
+          in the parts that aren't the feature: upload resumption, cost
+          modeling, and the payment path.
+        tech: [TypeScript, JavaScript, AWS, Serverless]
+        status: defunct
+        image: /assets/images/unitedfileservice.png
+
       - name: ARTS Core
         tagline: The retail industry's own data model, actually implemented.
         private: true
