@@ -164,6 +164,7 @@ groups:
           putting a wrong score on someone's kid's band.
         tech: [TypeScript, Python, dbt, DuckDB, Cloudflare Workers, R2, D1]
         status: live
+        image: /assets/images/bandnotes.png
         links:
           - label: bandnotes.app
             url: https://bandnotes.app/
@@ -184,6 +185,7 @@ groups:
           out.
         tech: [TypeScript, Python, SymPy, FastAPI, Claude API, Canvas]
         status: beta
+        image: /assets/images/mathrules.png
         links:
           - label: mathrules.app
             url: https://mathrules.app/
